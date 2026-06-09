@@ -500,7 +500,7 @@
         
         // 做题留痕数据结构
         const ANSWER_HISTORY_KEY = 'quiz_answer_history';
-        const AUTO_ADVANCE_DELAY = 800; // 正确答题后自动跳转延迟（毫秒）
+        const AUTO_ADVANCE_DELAY = 4000; // 正确答题后自动跳转延迟（毫秒），可配置：3000-5000
         
         // 获取答题历史
         // 【本地存储】从 localStorage 读取答题历史记录
@@ -584,6 +584,19 @@
         }
 
         function startQuiz(mode) {
+            // 检查是否有历史答题记录
+            const history = getAnswerHistory();
+            const hasHistory = Object.keys(history).length > 0;
+            
+            // 如果有历史记录，询问用户是否重新开始
+            if (hasHistory) {
+                const choice = confirm('检测到您有历史答题记录，是否重新开始做题？\n\n点击"确定"：清除历史记录，重新开始\n点击"取消"：保留历史记录，继续查看');
+                if (choice) {
+                    // 用户选择重新开始，清除所有历史记录
+                    clearAllHistory();
+                }
+            }
+            
             currentMode = mode;
             currentQuestionIndex = 0;
             userAnswers = {};
@@ -608,6 +621,17 @@
             
             startTimer();
             showQuestion();
+        }
+        
+        // 清除所有历史记录
+        function clearAllHistory() {
+            try {
+                localStorage.removeItem(ANSWER_HISTORY_KEY);
+                userAnswers = {};
+                console.log('历史记录已清除');
+            } catch (e) {
+                console.warn('清除历史记录失败:', e);
+            }
         }
 
         function startTimer() {
