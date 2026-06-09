@@ -20,14 +20,14 @@
         .mode-icon { font-size: 48px; margin-bottom: 15px; }
         .mode-title { font-size: 20px; font-weight: bold; color: #4F46E5; margin-bottom: 8px; }
         .mode-desc { font-size: 14px; color: #666; }
-        
+
         .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }
         .question-number { background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; padding: 10px 25px; border-radius: 25px; font-weight: bold; display: inline-block; }
         .question-category { background: rgba(16,185,129,0.1); color: #065F46; padding: 6px 15px; border-radius: 15px; font-size: 14px; }
         .timer { background: rgba(245,158,11,0.1); padding: 10px 20px; border-radius: 30px; color: #F59E0B; font-weight: bold; }
         .progress-bar { flex: 1; height: 10px; background: rgba(79,70,229,0.1); border-radius: 5px; overflow: hidden; }
         .progress-fill { height: 100%; background: linear-gradient(90deg, #4F46E5 0%, #10B981 100%); transition: width 0.5s ease; }
-        
+
         .question-text { font-size: 20px; line-height: 1.8; color: #2d3748; margin-bottom: 30px; }
         .options { display: flex; flex-direction: column; gap: 15px; }
         .option { padding: 20px 25px; border: 2px solid rgba(79,70,229,0.2); border-radius: 15px; cursor: pointer; transition: all 0.3s ease; font-size: 16px; background: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 15px; }
@@ -39,10 +39,10 @@
         .option.selected .option-letter { background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; }
         .option.correct .option-letter { background: #10B981; color: white; }
         .option.wrong .option-letter { background: #EF4444; color: white; }
-        
+
         .fill-input { width: 100%; padding: 15px 20px; border: 2px solid rgba(79,70,229,0.3); border-radius: 10px; font-size: 16px; background: rgba(255,255,255,0.9); }
         .essay-input { width: 100%; min-height: 150px; padding: 15px 20px; border: 2px solid rgba(79,70,229,0.3); border-radius: 10px; font-size: 16px; resize: vertical; background: rgba(255,255,255,0.9); line-height: 1.6; }
-        
+
         .quiz-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; flex-wrap: wrap; gap: 15px; }
         .btn { padding: 12px 30px; border: none; border-radius: 30px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
         .btn-primary { background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; }
@@ -50,7 +50,7 @@
         .btn-warning { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: white; }
         .mark-btn { padding: 12px 20px; border-radius: 30px; cursor: pointer; font-size: 14px; background: rgba(245,158,11,0.1); color: #F59E0B; border: 2px solid rgba(245,158,11,0.3); }
         .mark-btn.marked { background: rgba(245,158,11,0.2); border-color: #F59E0B; }
-        
+
         .jump-panel { margin-top: 20px; display: flex; flex-direction: column; gap: 20px; }
         .jump-group { display: flex; flex-wrap: wrap; gap: 8px; }
         .jump-group-title { font-weight: bold; color: #4F46E5; margin-bottom: 8px; font-size: 16px; width: 100%; }
@@ -59,11 +59,11 @@
         .jump-btn.current { background: #4F46E5; color: white; }
         .jump-btn.answered { background: rgba(16,185,129,0.2); border-color: #10B981; }
         .jump-btn.marked { border-color: #F59E0B; background: rgba(245,158,11,0.2); }
-        
+
         .analysis { margin-top: 25px; padding: 20px; background: rgba(16,185,129,0.1); border-left: 4px solid #10B981; border-radius: 0 10px 10px 0; display: none; }
         .analysis-title { font-weight: bold; color: #065F46; margin-bottom: 10px; }
         .analysis-text { color: #065F46; line-height: 1.6; }
-        
+
         /* 详细知识讲解 */
         .knowledge-section { margin-top: 20px; border: 2px solid rgba(79,70,229,0.2); border-radius: 15px; overflow: hidden; display: none; }
         .knowledge-header { padding: 15px 20px; background: linear-gradient(135deg, rgba(79,70,229,0.1) 0%, rgba(16,185,129,0.1) 100%); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: #4F46E5; }
@@ -72,7 +72,7 @@
         .knowledge-list { list-style: none; padding: 0; }
         .knowledge-list li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); color: #333; line-height: 1.6; }
         .knowledge-list li:before { content: '💡'; margin-right: 8px; }
-        
+
         /* 评分卡片 */
         .score-card { margin-top: 20px; padding: 20px; background: linear-gradient(135deg, rgba(79,70,229,0.05) 0%, rgba(245,158,11,0.05) 100%); border-radius: 15px; display: none; }
         .score-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
@@ -83,20 +83,20 @@
         .score-level.need-improve { background: rgba(239,68,68,0.2); color: #EF4444; }
         .score-details { color: #666; line-height: 1.8; }
         .score-details p { margin: 8px 0; }
-        
+
         /* 错误反馈 */
         .error-feedback { background: rgba(239,68,68,0.1); border-left: 4px solid #EF4444; padding: 15px; border-radius: 0 10px 10px 0; margin-bottom: 15px; display: none; }
         .error-feedback-title { font-weight: bold; color: #991B1B; margin-bottom: 8px; }
         .error-feedback-content { color: #991B1B; line-height: 1.6; }
-        
+
         /* 知识点标签 */
         .knowledge-tag { display: inline-block; padding: 5px 12px; background: rgba(79,70,229,0.1); color: #4F46E5; border-radius: 15px; font-size: 12px; margin-right: 8px; margin-bottom: 8px; }
-        
+
         /* 正确反馈 */
         .correct-feedback { background: rgba(16,185,129,0.1); border-left: 4px solid #10B981; padding: 15px; border-radius: 0 10px 10px 0; margin-bottom: 15px; display: none; }
         .correct-feedback-title { font-weight: bold; color: #065F46; margin-bottom: 8px; }
         .correct-feedback-content { color: #065F46; line-height: 1.6; }
-        
+
         .result-card { text-align: center; }
         .result-score { font-family: 'Ma Shan Zheng', cursive; font-size: 72px; color: #4F46E5; margin-bottom: 10px; }
         .result-label { font-size: 18px; color: #666; margin-bottom: 30px; }
@@ -104,24 +104,24 @@
         .stat-item { background: rgba(79,70,229,0.05); padding: 20px; border-radius: 15px; }
         .stat-value { font-size: 32px; font-weight: bold; color: #4F46E5; margin-bottom: 5px; }
         .stat-name { font-size: 14px; color: #666; }
-        
+
         .weakness-section { margin-top: 30px; }
         .weakness-title { font-size: 18px; font-weight: bold; color: #EF4444; margin-bottom: 15px; }
         .weakness-list { display: flex; flex-wrap: wrap; gap: 10px; }
         .weakness-tag { background: rgba(239,68,68,0.1); padding: 8px 16px; border-radius: 20px; color: #EF4444; font-size: 14px; }
-        
+
         .error-list { max-height: 300px; overflow-y: auto; }
         .error-item { padding: 15px; border-bottom: 1px solid rgba(0,0,0,0.1); cursor: pointer; }
         .error-item:hover { background: rgba(79,70,229,0.05); }
         .error-question { font-size: 14px; color: #333; margin-bottom: 5px; }
         .error-category { font-size: 12px; color: #666; }
-        
+
         .empty-state { text-align: center; padding: 50px; color: #999; }
         .empty-icon { font-size: 64px; margin-bottom: 20px; }
         .tab-bar { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid rgba(79,70,229,0.2); }
         .tab { padding: 10px 25px; border-radius: 10px 10px 0 0; cursor: pointer; font-weight: bold; color: #666; }
         .tab.active { background: rgba(79,70,229,0.1); color: #4F46E5; border-bottom: 3px solid #4F46E5; }
-        
+
         @media (max-width: 768px) {
             .card { padding: 25px; }
             .title { font-size: 32px; }
@@ -138,13 +138,25 @@
     <div id="consent-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%); border-radius: 28px; padding: 50px 45px; max-width: 520px; width: 92%; z-index: 10001; box-shadow: 0 25px 80px rgba(79, 70, 229, 0.15); border: 1px solid rgba(79, 70, 229, 0.08);">
         <div style="text-align: center;">
             <div style="width: 100px; height: 100px; margin: 0 auto 25px; background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%); border-radius: 24px; display: flex; align-items: center; justify-content: center; font-size: 52px;">📚</div>
-            <h2 style="font-family: 'Ma Shan Zheng', cursive; font-size: 32px; color: #4F46E5; margin-bottom: 22px; font-weight: normal;">帮助我们改进题库</h2>
+            <h2 style="font-family: 'Ma Shan Zheng', cursive; font-size: 32px; color: #4F46E5; margin-bottom: 22px; font-weight: normal;">你的专属学习诊断系统</h2>
             <p style="color: #666; line-height: 1.7; margin-bottom: 28px; font-size: 15px;">
-                本工具为课程作业项目，会<span style="color: #F59E0B; font-weight: 600;">匿名记录</span>答题数据（仅统计答题数量、正确率等，不含任何个人信息），帮助我们分析薄弱知识点，持续优化题库质量！
+                本工具为课程作业项目，会<span style="color: #F59E0B; font-weight: 600;">匿名记录</span>答题数据（仅统计答题数量、正确率等，不含任何个人信息）
             </p>
-            
-            <div style="color: #10B981; font-size: 14px; margin-bottom: 32px; font-weight: 500; letter-spacing: 0.5px;">✨ 您的参与将帮助全班同学更好地备考！</div>
-            
+
+            <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.04) 100%); border-radius: 16px; padding: 22px; margin-bottom: 28px;">
+                <div style="color: #10B981; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span style="font-size: 18px;">✓</span>
+                    <span>你将获得：</span>
+                </div>
+                <div style="color: #555; line-height: 2.2; font-size: 14px;">
+                    <div>• 精准定位自己的薄弱环节，复习效率翻倍</div>
+                    <div>• 越练越准，题目越来越贴合你的水平</div>
+                    <div>• 专属学习画像，越练越懂你</div>
+                </div>
+            </div>
+
+            <div style="color: #10B981; font-size: 14px; margin-bottom: 32px; font-weight: 500; letter-spacing: 0.5px;">✨ 专属学习画像 · 越练越懂你！</div>
+
             <button id="consent-agree-btn" style="padding: 16px 50px; background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; border: none; border-radius: 35px; font-size: 17px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);" onclick="agreeAndStart()">
                 我知道了，开始答题
             </button>
@@ -171,19 +183,19 @@
             <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
             <div class="question-text" id="question-text"></div>
             <div id="question-content"></div>
-            
+
             <!-- 错误反馈 -->
             <div class="error-feedback" id="error-feedback">
                 <div class="error-feedback-title">❌ 答题错误</div>
                 <div class="error-feedback-content" id="error-feedback-content"></div>
             </div>
-            
+
             <!-- 正确反馈 -->
             <div class="correct-feedback" id="correct-feedback">
                 <div class="correct-feedback-title">✅ 回答正确</div>
                 <div class="correct-feedback-content" id="correct-feedback-content"></div>
             </div>
-            
+
             <!-- 评分卡片 -->
             <div class="score-card" id="score-card">
                 <div class="score-header">
@@ -192,9 +204,9 @@
                 </div>
                 <div class="score-details" id="score-details"></div>
             </div>
-            
+
             <div class="analysis" id="analysis"><div class="analysis-title">🎯 答案解析</div><div class="analysis-text" id="analysis-text"></div></div>
-            
+
             <!-- 知识讲解 -->
             <div class="knowledge-section" id="knowledge-section">
                 <div class="knowledge-header" onclick="toggleKnowledge()">
@@ -258,7 +270,7 @@
 
         <div id="data-collection-page" class="card" style="display: none;">
             <h2 style="font-family: 'Ma Shan Zheng', cursive; font-size: 32px; color: #4F46E5; text-align: center; margin-bottom: 30px;">📊 数据收集</h2>
-            
+
             <div class="mode-card" style="margin-bottom: 20px; cursor: default;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                     <h3 style="color: #4F46E5;">📝 我的答题记录</h3>
@@ -272,7 +284,7 @@
                     <div id="my-weakness" style="color: #666;"></div>
                 </div>
             </div>
-            
+
             <div class="mode-card" style="margin-bottom: 20px; cursor: default;">
                 <div style="margin-bottom: 15px;">
                     <h3 style="color: #4F46E5; margin-bottom: 10px;">💬 提交反馈</h3>
@@ -284,7 +296,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="mode-card" style="margin-bottom: 20px; cursor: default;">
                 <div style="margin-bottom: 15px;">
                     <h3 style="color: #4F46E5; margin-bottom: 10px;">📤 导出数据</h3>
@@ -295,7 +307,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div style="text-align: center; margin-top: 30px;">
                 <button class="btn btn-secondary" onclick="goHome()">返回首页</button>
             </div>
@@ -303,7 +315,7 @@
     </div>
 
     <script>
-        
+
         // HTML转义函数，防止XSS攻击
         function escapeHtml(text) {
             if (!text) return '';
@@ -607,7 +619,7 @@
                 ]
             }
         };
-        
+
         // 评分标准
         const scoringRules = {
             excellent: { min: 80, label: "优秀", color: "#10B981", feedback: "掌握得很好！继续保持！" },
@@ -619,25 +631,25 @@
         function calculateEssayScore(userAnswer, standardAnswer, question) {
             let score = 0;
             let details = [];
-            
+
             // 提取标准答案关键词
             const keywords = extractKeywords(standardAnswer);
             let matchedCount = 0;
-            
+
             keywords.forEach(function(keyword) {
                 if (userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
                     matchedCount++;
                     details.push('✓ 包含关键词："' + keyword + '"');
                 }
             });
-            
+
             const keywordScore = Math.round((matchedCount / Math.max(keywords.length, 1)) * 60);
-            
+
             // 长度评分
             const lengthScore = Math.min(40, userAnswer.length / 10);
-            
+
             score = Math.min(100, Math.round(keywordScore + lengthScore));
-            
+
             return {
                 score: score,
                 details: details,
@@ -646,31 +658,31 @@
                 suggestion: getEssaySuggestion(score, userAnswer, standardAnswer)
             };
         }
-        
+
         function extractKeywords(text) {
             const stopWords = ["的", "是", "在", "和", "了", "也", "都", "而", "及", "与", "或", "但", "如果", "因为", "所以", "因此", "可以", "能够", "使用", "通过", "需要", "进行", "等", "这", "那", "个", "有", "没", "不", "也", "还", "就", "都", "很", "最", "更", "比", "让", "被", "把", "给", "上", "下", "中", "里", "外", "内", "前", "后", "左", "右", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
             const words = text.split(/[,。；、\s]+/);
             const keywords = [];
-            
+
             words.forEach(function(word) {
                 if (word.length >= 2 && !stopWords.includes(word)) {
                     keywords.push(word);
                 }
             });
-            
+
             const uniqueKeywords = [];
             keywords.forEach(function(word) {
                 if (!uniqueKeywords.includes(word)) {
                     uniqueKeywords.push(word);
                 }
             });
-            
+
             return uniqueKeywords.slice(0, 10);
         }
-        
+
         function getEssaySuggestion(score, userAnswer, standardAnswer) {
             let suggestions = [];
-            
+
             if (score < 40) {
                 suggestions.push("建议先认真阅读课程内容，理解基本概念");
             } else if (score < 70) {
@@ -678,18 +690,18 @@
             } else {
                 suggestions.push("回答得不错！可以再提升内容更全面");
             }
-            
+
             return suggestions;
         }
-        
+
         // 填空题智能评分
         function calculateFillScore(userAnswer, standardAnswer) {
             const normalizedUser = userAnswer.trim().toLowerCase();
             const normalizedStandard = standardAnswer.trim().toLowerCase();
-            
+
             let score = 0;
             let details = [];
-            
+
             if (normalizedUser === normalizedStandard) {
                 score = 100;
                 details.push("✓ 答案完全正确");
@@ -703,19 +715,19 @@
                 score = 0;
                 details.push("✗ 答案错误");
             }
-            
+
             return {
                 score: score,
                 details: details,
                 suggestion: score < 70 ? "建议复习相关知识" : "很好！"
             };
         }
-        
+
         // 计算编辑距离
         function levenshteinDistance(a, b) {
             if (a.length === 0) return b.length;
             if (b.length === 0) return a.length;
-            
+
             const matrix = [];
             for (let i = 0; i <= b.length; i++) {
                 matrix[i] = [i];
@@ -723,7 +735,7 @@
             for (let j = 0; j <= a.length; j++) {
                 matrix[0][j] = j;
             }
-            
+
             for (let i = 1; i <= b.length; i++) {
                 for (let j = 1; j <= a.length; j++) {
                     if (b.charAt(i - 1) === a.charAt(j - 1)) {
@@ -737,21 +749,21 @@
                     }
                 }
             }
-            
+
             return matrix[b.length][a.length];
         }
-        
+
         // 获取知识讲解内容
         function getKnowledgeContent(category) {
             let content = "";
-            
+
             const matchedCategory = Object.keys(knowledgeBase).find(function(key) {
                 return category.includes(key) || key.includes(category);
             }) || category;
-            
+
             if (knowledgeBase[matchedCategory]) {
                 const knowledge = knowledgeBase[matchedCategory];
-                
+
                 content = '<div class="knowledge-title">📖 核心概念</div><ul class="knowledge-list">';
                 knowledge.basic.forEach(function(item) {
                     content += '<li>' + escapeHtml(item) + '</li>';
@@ -764,15 +776,15 @@
             } else {
                 content = '<div class="knowledge-title">📖 核心概念</div><p style="color: #666; line-height: 1.8;">这部分知识的要点。</p>';
             }
-            
+
             return content;
         }
-        
+
         // 展开/收起知识讲解
         function toggleKnowledge() {
             const content = document.getElementById('knowledge-content');
             const icon = document.getElementById('knowledge-toggle-icon');
-            
+
             if (content.style.display === 'none' || content.style.display === '') {
                 content.style.display = 'block';
                 icon.textContent = '▲';
@@ -781,7 +793,7 @@
                 icon.textContent = '▼';
             }
         }
-        
+
         // 获取评分等级
         function getScoreLevel(score) {
             if (score >= scoringRules.excellent.min) return 'excellent';
@@ -800,11 +812,11 @@
         let totalCorrect = 0;
         let hasSubmittedCurrent = false;
         let autoAdvanceTimer = null;
-        
+
         // 做题留痕数据结构
         const ANSWER_HISTORY_KEY = 'quiz_answer_history';
         const AUTO_ADVANCE_DELAY = 800; // 正确答题后自动跳转延迟（毫秒）
-        
+
         // 获取答题历史
         function getAnswerHistory() {
             try {
@@ -814,7 +826,7 @@
                 return {};
             }
         }
-        
+
         // 保存答题历史
         function saveAnswerHistory(history) {
             try {
@@ -823,12 +835,12 @@
                 console.warn('保存答题历史失败:', e);
             }
         }
-        
+
         // 记录答题历史
         function recordAnswerHistory(questionId, userAnswer, isCorrect, scoreResult) {
             const history = getAnswerHistory();
             const question = questions.find(q => q.id === questionId);
-            
+
             history[questionId] = {
                 userAnswer: userAnswer,
                 isCorrect: isCorrect,
@@ -838,7 +850,7 @@
                 scoreResult: scoreResult,
                 hasViewedAnalysis: true
             };
-            
+
             saveAnswerHistory(history);
         }
 
@@ -893,19 +905,19 @@
             totalAnswered = 0;
             totalCorrect = 0;
             hasSubmittedCurrent = false;
-            
+
             // 清除自动跳转计时器
             if (autoAdvanceTimer) {
                 clearTimeout(autoAdvanceTimer);
                 autoAdvanceTimer = null;
             }
-            
+
             document.getElementById('home-page').style.display = 'none';
             document.getElementById('quiz-page').style.display = 'block';
             document.getElementById('result-page').style.display = 'none';
             document.getElementById('wrongbook-page').style.display = 'none';
             document.getElementById('stats-page').style.display = 'none';
-            
+
             startTimer();
             showQuestion();
         }
@@ -935,7 +947,7 @@
             // 匹配前面的题型+数字+顿号的模式，如"单选题1、"、"多选题33、"等
             cleanQuestion = cleanQuestion.replace(/^(单选题|多选题|判断题|填空题|简答题)\d+、/, '');
             questionTextEl.innerHTML = escapeHtml(cleanQuestion);
-            
+
             const contentDiv = document.getElementById('question-content');
             // 清理旧的事件监听器
             const oldOptions = contentDiv.querySelectorAll('.option');
@@ -943,7 +955,7 @@
                 opt.onclick = null;
             });
             contentDiv.innerHTML = '';
-            
+
             // 隐藏所有新增元素（默认状态）
             document.getElementById('analysis').style.display = 'none';
             document.getElementById('knowledge-section').style.display = 'none';
@@ -951,19 +963,19 @@
             document.getElementById('score-card').style.display = 'none';
             document.getElementById('error-feedback').style.display = 'none';
             document.getElementById('correct-feedback').style.display = 'none';
-            
+
             // 清除自动跳转计时器
             if (autoAdvanceTimer) {
                 clearTimeout(autoAdvanceTimer);
                 autoAdvanceTimer = null;
             }
-            
+
             // Reset submission flag for new question
             hasSubmittedCurrent = false;
-            
+
             const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
             document.getElementById('progress-fill').style.width = progress + '%';
-            
+
             // Configure submit button based on question type
             const submitBtn = document.getElementById('submit-btn');
             if (question.type === '多选题') {
@@ -973,11 +985,11 @@
                 submitBtn.textContent = '提交答案';
                 submitBtn.style.opacity = '1';
             }
-            
+
             // 检查是否有答题历史
             const history = getAnswerHistory();
             const questionHistory = history[question.id];
-            
+
             if (question.type === '单选题' || question.type === '多选题') {
                 const optionsDiv = document.createElement('div');
                 optionsDiv.className = 'options';
@@ -1016,26 +1028,26 @@
                 textarea.oninput = function() { saveAnswer(question.id, textarea.value); };
                 contentDiv.appendChild(textarea);
             }
-            
+
             // 如果有答题历史，恢复答题状态
             if (questionHistory) {
                 restoreQuestionState(question, questionHistory);
             }
-            
+
             updateMarkButton();
             updateJumpPanel();
         }
-        
+
         // 恢复题目状态（做题留痕功能）
         function restoreQuestionState(question, history) {
             hasSubmittedCurrent = true;
-            
+
             // 恢复用户答案到userAnswers
             userAnswers[question.id] = history.userAnswer;
-            
+
             if (question.type === '单选题' || question.type === '多选题' || question.type === '判断题') {
                 const options = document.querySelectorAll('.option');
-                
+
                 if (question.type === '多选题') {
                     // 恢复多选题选择状态
                     if (Array.isArray(history.userAnswer)) {
@@ -1059,7 +1071,7 @@
                         options[selectedIndex].classList.add('selected');
                     }
                 }
-                
+
                 // 恢复结果展示（正确/错误标识）
                 restoreOptionResults(question, options, history);
             } else if (question.type === '填空题' || question.type === '简答题') {
@@ -1068,50 +1080,50 @@
                     input.value = history.userAnswer;
                 }
             }
-            
+
             // 恢复反馈显示
             if (history.isCorrect) {
                 document.getElementById('correct-feedback').style.display = 'block';
-                document.getElementById('correct-feedback-content').textContent = 
-                    question.type === '简答题' || question.type === '填空题' ? 
+                document.getElementById('correct-feedback-content').textContent =
+                    question.type === '简答题' || question.type === '填空题' ?
                     '做得很好！继续保持！' : '回答正确！';
             } else {
                 document.getElementById('error-feedback').style.display = 'block';
-                document.getElementById('error-feedback-content').textContent = 
+                document.getElementById('error-feedback-content').textContent =
                     '这道题答错了，没关系，认真看解析学习！';
             }
-            
+
             // 恢复评分卡片（针对主观题）
             if ((question.type === '填空题' || question.type === '简答题') && history.scoreResult) {
                 const scoreLevel = getScoreLevel(history.scoreResult.score);
                 const levelInfo = scoringRules[scoreLevel];
-                
+
                 document.getElementById('score-card').style.display = 'block';
                 document.getElementById('score-value').textContent = history.scoreResult.score;
                 document.getElementById('score-value').style.color = levelInfo.color;
-                
+
                 const levelElement = document.getElementById('score-level');
                 levelElement.textContent = levelInfo.label;
                 levelElement.className = 'score-level ' + scoreLevel;
-                
+
                 let detailsText = '<p>' + levelInfo.feedback + '</p>';
-                
+
                 if (history.scoreResult.details && history.scoreResult.details.length > 0) {
                     detailsText += '<p>' + history.scoreResult.details.map(d => escapeHtml(d)).join('<br>') + '</p>';
                 }
-                
+
                 document.getElementById('score-details').innerHTML = detailsText;
             }
-            
+
             // 恢复答案解析
             let standardAnswer = (question.type === '多选题') ? question.answer.join(', ') : question.answer;
             document.getElementById('analysis-text').textContent = '标准答案：' + standardAnswer + '\n\n' + question.analysis;
             document.getElementById('analysis').style.display = 'block';
-            
+
             // 恢复知识讲解
             document.getElementById('knowledge-section').style.display = 'block';
             document.getElementById('knowledge-content').innerHTML = getKnowledgeContent(question.category);
-            
+
             // 更新提交按钮状态
             const submitBtn = document.getElementById('submit-btn');
             if (history.isCorrect) {
@@ -1122,14 +1134,14 @@
                 submitBtn.style.opacity = '0.6';
             }
         }
-        
+
         // 恢复选项结果标识
         function restoreOptionResults(question, options, history) {
             if (question.type === '单选题' || question.type === '多选题') {
                 options.forEach(function(opt, index) {
                     opt.style.pointerEvents = 'none';
                     const optionLetter = String.fromCharCode(65 + index);
-                    
+
                     if (question.type === '多选题') {
                         if (question.answer.includes(optionLetter)) {
                             opt.classList.add('correct');
@@ -1204,17 +1216,17 @@
 
         function selectOption(index, type) {
             const options = document.querySelectorAll('.option');
-            
+
             if (type === '多选题') {
                 const option = document.querySelectorAll('.option')[index];
                 option.classList.toggle('selected');
-                const selectedOptions = Array.from(options).filter(function(opt) { 
-                    return opt.classList.contains('selected'); 
+                const selectedOptions = Array.from(options).filter(function(opt) {
+                    return opt.classList.contains('selected');
                 }).map(function(opt, i) {
                     return String.fromCharCode(65 + Array.from(options).indexOf(opt));
                 });
                 saveAnswer(questions[currentQuestionIndex].id, selectedOptions);
-                
+
                 // Update submit button text based on selection
                 const submitBtn = document.getElementById('submit-btn');
                 if (selectedOptions.length > 0) {
@@ -1231,7 +1243,7 @@
                 option.classList.add('selected');
                 const answer = typeof index === 'number' ? String.fromCharCode(65 + index) : (index ? '对' : '错');
                 saveAnswer(questions[currentQuestionIndex].id, answer);
-                
+
                 // Auto-submit for single-choice and true/false questions
                 setTimeout(function() {
                     submitAnswer();
@@ -1246,12 +1258,12 @@
         function submitAnswer() {
             const question = questions[currentQuestionIndex];
             const userAnswer = userAnswers[question.id];
-            
+
             if (!userAnswer) {
                 alert('请先作答！');
                 return;
             }
-            
+
             // Prevent duplicate submissions for the same question
             if (hasSubmittedCurrent) {
                 // If already submitted, allow navigation to next question
@@ -1261,12 +1273,12 @@
                 return;
             }
             hasSubmittedCurrent = true;
-            
+
             totalAnswered++;
-            
+
             let isCorrect = false;
             let scoreResult = null;
-            
+
             if (question.type === '多选题') {
                 isCorrect = JSON.stringify(userAnswer.sort()) === JSON.stringify(question.answer.sort());
             } else if (question.type === '判断题') {
@@ -1280,10 +1292,10 @@
             } else {
                 isCorrect = userAnswer === question.answer;
             }
-            
+
             // 记录答题历史（做题留痕）
             recordAnswerHistory(question.id, userAnswer, isCorrect, scoreResult);
-            
+
             if (isCorrect) {
                 totalCorrect++;
                 consecutiveCorrect++;
@@ -1291,47 +1303,47 @@
                     showPraise();
                     consecutiveCorrect = 0;
                 }
-                
+
                 showResult(isCorrect, question, scoreResult, userAnswer);
                 updateStats();
-                
+
                 // 正确答题后延迟自动跳转（可配置时间）
                 if (question.type !== '多选题') {
                     // 显示即将跳转提示
                     showAutoAdvanceNotice();
-                    
+
                     autoAdvanceTimer = setTimeout(() => {
                         hideAutoAdvanceNotice();
                         nextQuestion();
                     }, AUTO_ADVANCE_DELAY);
                 }
-                
+
                 return;
             } else {
                 consecutiveCorrect = 0;
                 showEncouragement();
                 addToWrongBook(question, userAnswer);
             }
-            
+
             showResult(isCorrect, question, scoreResult, userAnswer);
             updateStats();
-            
+
             // 错误答题时显示手动操作提示
             showManualNavigationPrompt();
         }
-        
+
         // 显示自动跳转提示
         function showAutoAdvanceNotice() {
             const submitBtn = document.getElementById('submit-btn');
             submitBtn.textContent = '回答正确！' + (AUTO_ADVANCE_DELAY / 1000) + '秒后自动跳转...';
             submitBtn.style.opacity = '1';
         }
-        
+
         // 隐藏自动跳转提示
         function hideAutoAdvanceNotice() {
             // 颜色保持原有样式不变
         }
-        
+
         // 显示手动操作提示（错误答题时）
         function showManualNavigationPrompt() {
             const submitBtn = document.getElementById('submit-btn');
@@ -1341,12 +1353,12 @@
 
         function showResult(isCorrect, question, scoreResult, userAnswer) {
             const options = document.querySelectorAll('.option');
-            
+
             if (question.type === '单选题' || question.type === '多选题') {
                 options.forEach(function(opt, index) {
                     opt.style.pointerEvents = 'none';
                     const optionLetter = String.fromCharCode(65 + index);
-                    
+
                     if (question.type === '多选题') {
                         if (question.answer.includes(optionLetter)) {
                             opt.classList.add('correct');
@@ -1423,46 +1435,46 @@
                     }
                 });
             }
-            
+
             // 显示正确/错误反馈
             if (isCorrect) {
                 document.getElementById('correct-feedback').style.display = 'block';
-                document.getElementById('correct-feedback-content').textContent = 
-                    question.type === '简答题' || question.type === '填空题' ? 
+                document.getElementById('correct-feedback-content').textContent =
+                    question.type === '简答题' || question.type === '填空题' ?
                     '做得很好！继续保持！' : '回答正确！';
             } else {
                 document.getElementById('error-feedback').style.display = 'block';
-                document.getElementById('error-feedback-content').textContent = 
+                document.getElementById('error-feedback-content').textContent =
                     '这道题答错了，没关系，认真看解析学习！';
             }
-            
+
             // 显示评分卡片（针对主观题）
             if ((question.type === '填空题' || question.type === '简答题') && scoreResult) {
                 const scoreLevel = getScoreLevel(scoreResult.score);
                 const levelInfo = scoringRules[scoreLevel];
-                
+
                 document.getElementById('score-card').style.display = 'block';
                 document.getElementById('score-value').textContent = scoreResult.score;
                 document.getElementById('score-value').style.color = levelInfo.color;
-                
+
                 const levelElement = document.getElementById('score-level');
                 levelElement.textContent = levelInfo.label;
                 levelElement.className = 'score-level ' + scoreLevel;
-                
+
                 let detailsText = '<p>' + levelInfo.feedback + '</p>';
-                
+
                 if (scoreResult.details && scoreResult.details.length > 0) {
                     detailsText += '<p>' + scoreResult.details.map(d => escapeHtml(d)).join('<br>') + '</p>';
                 }
-                
+
                 document.getElementById('score-details').innerHTML = detailsText;
             }
-            
+
             // 显示答案解析
             let standardAnswer = (question.type === '多选题') ? question.answer.join(', ') : question.answer;
             document.getElementById('analysis-text').textContent = '标准答案：' + standardAnswer + '\n\n' + question.analysis;
             document.getElementById('analysis').style.display = 'block';
-            
+
             // 显示知识讲解
             document.getElementById('knowledge-section').style.display = 'block';
             document.getElementById('knowledge-content').innerHTML = getKnowledgeContent(question.category);
@@ -1476,7 +1488,7 @@
                 console.warn('读取错题本失败:', e);
             }
             const exists = wrongBook.find(function(w) { return w.id === question.id; });
-            
+
             if (!exists) {
                 wrongBook.push({
                     id: question.id,
@@ -1506,7 +1518,7 @@
             stats.total++;
             const question = questions[currentQuestionIndex];
             let isCorrect = false;
-            
+
             if (question.type === '多选题') {
                 isCorrect = JSON.stringify((userAnswers[question.id] || []).sort()) === JSON.stringify(question.answer.sort());
             } else if (question.type === '判断题') {
@@ -1519,7 +1531,7 @@
             } else {
                 isCorrect = userAnswers[question.id] === question.answer;
             }
-            
+
             if (isCorrect) stats.correct++;
             try {
                 localStorage.setItem('quizStats', JSON.stringify(stats));
@@ -1534,7 +1546,7 @@
                 clearTimeout(autoAdvanceTimer);
                 autoAdvanceTimer = null;
             }
-            
+
             if (currentQuestionIndex < questions.length - 1) {
                 currentQuestionIndex++;
                 showQuestion();
@@ -1542,14 +1554,14 @@
                 finishQuiz();
             }
         }
-        
+
         function prevQuestion() {
             // 清除自动跳转计时器
             if (autoAdvanceTimer) {
                 clearTimeout(autoAdvanceTimer);
                 autoAdvanceTimer = null;
             }
-            
+
             if (currentQuestionIndex > 0) {
                 currentQuestionIndex--;
                 showQuestion();
@@ -1559,20 +1571,20 @@
         function toggleMark() {
             const questionId = questions[currentQuestionIndex].id;
             const index = markedQuestions.indexOf(questionId);
-            
+
             if (index > -1) {
                 markedQuestions.splice(index, 1);
             } else {
                 markedQuestions.push(questionId);
             }
-            
+
             updateMarkButton();
         }
 
         function updateMarkButton() {
             const btn = document.getElementById('mark-btn');
             const questionId = questions[currentQuestionIndex].id;
-            
+
             if (markedQuestions.includes(questionId)) {
                 btn.classList.add('marked');
                 btn.textContent = '📌 已标记';
@@ -1585,7 +1597,7 @@
         function updateJumpPanel() {
             const panel = document.getElementById('jump-panel');
             panel.innerHTML = '';
-            
+
             // 按题型分组
             const groups = {};
             questions.forEach(function(q, index) {
@@ -1594,7 +1606,7 @@
                 }
                 groups[q.type].push({ question: q, index: index });
             });
-            
+
             // 按顺序显示各题型
             const typeOrder = ['单选题', '多选题', '判断题', '填空题', '简答题'];
             typeOrder.forEach(function(type) {
@@ -1604,29 +1616,29 @@
                     titleDiv.className = 'jump-group-title';
                     titleDiv.textContent = type;
                     panel.appendChild(titleDiv);
-                    
+
                     // 创建分组容器
                     const groupDiv = document.createElement('div');
                     groupDiv.className = 'jump-group';
-                    
+
                     groups[type].forEach(function(item) {
                         const btn = document.createElement('button');
                         btn.className = 'jump-btn';
                         // 直接显示完整id
                         btn.textContent = item.question.id;
-                        
+
                         if (item.index === currentQuestionIndex) btn.classList.add('current');
                         if (userAnswers[item.question.id]) btn.classList.add('answered');
                         if (markedQuestions.includes(item.question.id)) btn.classList.add('marked');
-                        
+
                         btn.onclick = function() {
                             currentQuestionIndex = item.index;
                             showQuestion();
                         };
-                        
+
                         groupDiv.appendChild(btn);
                     });
-                    
+
                     panel.appendChild(groupDiv);
                 }
             });
@@ -1634,27 +1646,27 @@
 
         function finishQuiz() {
             clearInterval(timerInterval);
-            
+
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
             const minutes = Math.floor(elapsed / 60);
             const seconds = elapsed % 60;
             const timeStr = minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
-            
+
             const accuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
-            
+
             document.getElementById('result-score').textContent = accuracy + '分';
             document.getElementById('result-label').textContent = getScoreLabel(accuracy);
             document.getElementById('stat-answered').textContent = totalAnswered;
             document.getElementById('stat-correct').textContent = totalCorrect;
             document.getElementById('stat-accuracy').textContent = accuracy + '%';
             document.getElementById('stat-time').textContent = timeStr;
-            
+
             // 收集错题数据
             const wrongQuestions = [];
             questions.forEach(function(q) {
                 const userAnswer = userAnswers[q.id];
                 let isWrong = false;
-                
+
                 if (q.type === '多选题') {
                     isWrong = JSON.stringify((userAnswer || []).sort()) !== JSON.stringify(q.answer.sort());
                 } else if (q.type === '判断题') {
@@ -1667,7 +1679,7 @@
                 } else {
                     isWrong = userAnswer !== q.answer;
                 }
-                
+
                 if (isWrong) {
                     wrongQuestions.push({
                         id: q.id,
@@ -1679,18 +1691,18 @@
                     });
                 }
             });
-            
+
             // 保存答题记录
             saveQuizResult(totalCorrect, totalAnswered, wrongQuestions);
-            
+
             showWeaknessAnalysis();
             showErrorList();
-            
+
             document.getElementById('quiz-page').style.display = 'none';
             document.getElementById('result-page').style.display = 'block';
         }
 
-        
+
 
         function getScoreLabel(score) {
             if (score >= 90) return '🏆 优秀！继续保持！';
@@ -1702,17 +1714,17 @@
         function showWeaknessAnalysis() {
             const weaknessList = document.getElementById('weakness-list');
             weaknessList.innerHTML = '';
-            
+
             const categoryStats = {};
             questions.forEach(function(q) {
                 if (!categoryStats[q.category]) {
                     categoryStats[q.category] = { total: 0, wrong: 0 };
                 }
                 categoryStats[q.category].total++;
-                
+
                 const userAnswer = userAnswers[q.id];
                 let isWrong = false;
-                
+
                 if (q.type === '多选题') {
                     isWrong = JSON.stringify((userAnswer || []).sort()) !== JSON.stringify(q.answer.sort());
                 } else if (q.type === '判断题') {
@@ -1722,15 +1734,15 @@
                 } else if (q.type !== '简答题') {
                     isWrong = userAnswer !== q.answer;
                 }
-                
+
                 if (isWrong) categoryStats[q.category].wrong++;
             });
-            
+
             const weaknesses = Object.entries(categoryStats)
                 .filter(function(entry) { return entry[1].wrong > 0; })
                 .sort(function(a, b) { return b[1].wrong - a[1].wrong; })
                 .slice(0, 5);
-            
+
             if (weaknesses.length === 0) {
                 weaknessList.innerHTML = '<span class="weakness-tag">🎉 暂无薄弱知识点！</span>';
             } else {
@@ -1748,13 +1760,13 @@
         function showErrorList() {
             const errorList = document.getElementById('result-errors');
             errorList.innerHTML = '';
-            
+
             questions.forEach(function(q) {
                 const userAnswer = userAnswers[q.id];
                 let isWrong = false;
-                
+
                 if (!userAnswer) return;
-                
+
                 if (q.type === '多选题') {
                     isWrong = JSON.stringify((userAnswer || []).sort()) !== JSON.stringify(q.answer.sort());
                 } else if (q.type === '判断题') {
@@ -1764,7 +1776,7 @@
                 } else if (q.type !== '简答题') {
                     isWrong = userAnswer !== q.answer;
                 }
-                
+
                 if (isWrong) {
                     let cleanQuestion = q.question;
                     cleanQuestion = cleanQuestion.replace(/^(单选题|多选题|判断题|填空题|简答题)\d+、/, '');
@@ -1786,7 +1798,7 @@
         function showResultTab(tab, clickedElement) {
             document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
             if (clickedElement) clickedElement.classList.add('active');
-            
+
             if (tab === 'overview') {
                 document.getElementById('result-overview').style.display = 'block';
                 document.getElementById('result-errors').style.display = 'none';
@@ -1804,7 +1816,7 @@
                 console.warn('读取错题本失败:', e);
             }
             const content = document.getElementById('wrongbook-content');
-            
+
             if (wrongBook.length === 0) {
                 content.innerHTML = '<div class="empty-state"><div class="empty-icon">🎉</div><p>太棒了！暂无错题！</p></div>';
             } else {
@@ -1825,7 +1837,7 @@
                 html += '</div>';
                 content.innerHTML = html;
             }
-            
+
             document.getElementById('home-page').style.display = 'none';
             document.getElementById('quiz-page').style.display = 'none';
             document.getElementById('result-page').style.display = 'none';
@@ -1841,13 +1853,13 @@
                 console.warn('读取错题本失败:', e);
             }
             const wrong = wrongBook[index];
-            
+
             currentQuestionIndex = questions.findIndex(function(q) { return q.id === wrong.id; });
             if (currentQuestionIndex === -1) {
                 alert('题目不存在');
                 return;
             }
-            
+
             document.getElementById('wrongbook-page').style.display = 'none';
             document.getElementById('quiz-page').style.display = 'block';
             showQuestion();
@@ -1878,12 +1890,12 @@
                 console.warn('读取错题本失败:', e);
             }
             const accuracy = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
-            
+
             document.getElementById('stats-total').textContent = stats.total;
             document.getElementById('stats-correct').textContent = stats.correct;
             document.getElementById('stats-accuracy').textContent = accuracy + '%';
             document.getElementById('stats-wrong').textContent = wrongBook.length;
-            
+
             document.getElementById('home-page').style.display = 'none';
             document.getElementById('quiz-page').style.display = 'none';
             document.getElementById('result-page').style.display = 'none';
@@ -1896,13 +1908,13 @@
                 clearInterval(timerInterval);
                 timerInterval = null;
             }
-            
+
             // 清除自动跳转计时器
             if (autoAdvanceTimer) {
                 clearTimeout(autoAdvanceTimer);
                 autoAdvanceTimer = null;
             }
-            
+
             document.getElementById('home-page').style.display = 'block';
             document.getElementById('quiz-page').style.display = 'none';
             document.getElementById('result-page').style.display = 'none';
@@ -1920,24 +1932,24 @@
             } catch (e) {
                 console.warn('读取答题记录失败:', e);
             }
-            
+
             let wrongBook = [];
             try {
                 wrongBook = JSON.parse(localStorage.getItem('wrongBook') || '[]');
             } catch (e) {
                 console.warn('读取错题本失败:', e);
             }
-            
+
             // 计算统计数据
             const totalRecords = quizRecords.length;
             let totalQuestions = 0;
             let totalCorrect = 0;
             const categoryErrors = {};
-            
+
             quizRecords.forEach(record => {
                 totalQuestions += record.totalQuestions || 0;
                 totalCorrect += record.correctCount || 0;
-                
+
                 // 统计错题知识点
                 if (record.wrongQuestions) {
                     record.wrongQuestions.forEach(q => {
@@ -1946,14 +1958,14 @@
                     });
                 }
             });
-            
+
             // 计算平均正确率
             const avgAccuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
-            
+
             // 更新显示
             document.getElementById('my-total').textContent = totalRecords;
             document.getElementById('my-avg-accuracy').textContent = avgAccuracy + '%';
-            
+
             // 显示薄弱知识点
             const weaknessDiv = document.getElementById('my-weakness');
             if (Object.keys(categoryErrors).length > 0) {
@@ -1967,7 +1979,7 @@
             } else {
                 weaknessDiv.innerHTML = '<p>暂无错题记录</p>';
             }
-            
+
             // 切换页面
             document.getElementById('home-page').style.display = 'none';
             document.getElementById('quiz-page').style.display = 'none';
@@ -1980,19 +1992,19 @@
         function submitFeedback() {
             const name = document.getElementById('feedback-name').value.trim();
             const content = document.getElementById('feedback-content').value.trim();
-            
+
             if (!content) {
                 alert('请填写反馈内容！');
                 return;
             }
-            
+
             const feedback = {
                 id: Date.now(),
                 name: name || '匿名用户',
                 content: content,
                 timestamp: new Date().toISOString()
             };
-            
+
             // 保存到本地
             let feedbacks = [];
             try {
@@ -2000,15 +2012,15 @@
             } catch (e) {
                 console.warn('读取反馈失败:', e);
             }
-            
+
             feedbacks.push(feedback);
-            
+
             try {
                 localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
             } catch (e) {
                 console.warn('保存反馈失败:', e);
             }
-            
+
             alert('感谢您的反馈！🎉');
             document.getElementById('feedback-name').value = '';
             document.getElementById('feedback-content').value = '';
@@ -2022,28 +2034,28 @@
                 wrongBook: [],
                 feedbacks: []
             };
-            
+
             try {
                 data.quizRecords = JSON.parse(localStorage.getItem('quizRecords') || '[]');
             } catch (e) {
                 console.warn('读取答题记录失败:', e);
             }
-            
+
             try {
                 data.wrongBook = JSON.parse(localStorage.getItem('wrongBook') || '[]');
             } catch (e) {
                 console.warn('读取错题本失败:', e);
             }
-            
+
             try {
                 data.feedbacks = JSON.parse(localStorage.getItem('feedbacks') || '[]');
             } catch (e) {
                 console.warn('读取反馈失败:', e);
             }
-            
+
             // 生成文件名
             const fileName = '题库数据_' + new Date().toLocaleDateString('zh-CN').replace(/\//g, '-') + '.json';
-            
+
             // 导出为JSON文件
             const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
             const url = URL.createObjectURL(blob);
@@ -2054,7 +2066,7 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            
+
             alert('数据导出成功！文件已下载。\n请将此文件发送给老师汇总。');
         }
 
@@ -2064,13 +2076,13 @@
                 wrongBook: JSON.parse(localStorage.getItem('wrongBook') || '[]'),
                 feedbacks: JSON.parse(localStorage.getItem('feedbacks') || '[]')
             };
-            
+
             const preview = '📊 本地数据预览：\n\n' +
                 '答题次数：' + data.quizRecords.length + '\n' +
                 '错题数量：' + data.wrongBook.length + '\n' +
                 '反馈数量：' + data.feedbacks.length + '\n\n' +
                 '如需查看详细数据，请点击"导出全部数据"按钮。';
-            
+
             alert(preview);
         }
 
@@ -2084,16 +2096,16 @@
                 accuracy: Math.round((correctCount / totalQuestions) * 100),
                 wrongQuestions: wrongQuestions
             };
-            
+
             let quizRecords = [];
             try {
                 quizRecords = JSON.parse(localStorage.getItem('quizRecords') || '[]');
             } catch (e) {
                 console.warn('读取答题记录失败:', e);
             }
-            
+
             quizRecords.push(record);
-            
+
             try {
                 localStorage.setItem('quizRecords', JSON.stringify(quizRecords));
             } catch (e) {
@@ -2119,7 +2131,7 @@
                 } catch (e) {}
             }
         });
-        
+
         function agreeAndStart() {
             document.getElementById('consent-overlay').style.display = 'none';
             document.getElementById('consent-modal').style.display = 'none';
