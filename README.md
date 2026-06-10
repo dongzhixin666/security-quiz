@@ -54,11 +54,13 @@
 
 ```
 security-quiz/
-├── index.html          # 主页面
+├── index.html          # 页面骨架
 ├── css/
-│   └── style.css       # 样式文件
+│   └── style.css       # 样式文件（支持深色/浅色主题）
 ├── js/
-│   └── script.js       # 交互逻辑
+│   ├── data.js         # 题库数据（201道题目）
+│   └── quiz.js         # 核心逻辑（渲染、判分、存储、导出）
+├── 1.png               # 背景图片
 ├── LICENSE             # MIT 开源协议
 ├── README.md           # 项目说明
 └── 一键上传.bat        # 快速部署脚本
