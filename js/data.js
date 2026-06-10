@@ -1,0 +1,305 @@
+/**
+ * 数据库安全技术题库数据
+ * 共201道题目，涵盖单选题、多选题、判断题、填空题、简答题
+ */
+
+window.questions = [
+    {"id":"单选题1","type":"单选题","question":"单选题1、SQL注入攻击的本质是什么？","options":["A.拒绝服务攻击","B.将SQL代码插入应用程序的查询中","C.暴力破解密码","D.跨站脚本攻击"],"answer":"B","analysis":"SQL注入攻击是指攻击者通过在Web应用的输入字段中插入恶意SQL语句，使这些语句被数据库执行。","category":"SQL注入"},
+    {"id":"单选题2","type":"单选题","question":"单选题2、以下哪种SQL注入类型不需要使用单引号闭合？","options":["A.字符型注入","B.搜索型注入","C.数字型注入","D.Cookie注入"],"answer":"C","analysis":"数字型注入的参数是数字类型，SQL语句中该参数不带引号，因此注入时不需要闭合引号。","category":"SQL注入"},
+    {"id":"单选题3","type":"单选题","question":"单选题3、在MySQL中，注释符不包括以下哪个？","options":["A.--","B.#","C./**/","D.//"],"answer":"D","analysis":"MySQL支持的注释符包括：--、#、/*...*/。//不是MySQL的注释符。","category":"SQL注入"},
+    {"id":"单选题4","type":"单选题","question":"单选题4、SQL注入中，union select语句的作用是？","options":["A.删除数据","B.合并两个查询的结果集","C.修改数据","D.创建新表"],"answer":"B","analysis":"UNION SELECT用于合并两个或多个SELECT语句的结果集，要求列数相同且数据类型兼容。","category":"SQL注入"},
+    {"id":"单选题5","type":"单选题","question":"单选题5、以下哪个函数可以获取MySQL当前数据库名？","options":["A.version()","B.user()","C.database()","D.@@datadir"],"answer":"C","analysis":"database()函数返回当前数据库名称。","category":"SQL注入"},
+    {"id":"单选题6","type":"单选题","question":"单选题6、SQL注入攻击通常发生在Web应用的哪个层？","options":["A.前端展示层","B.业务逻辑层","C.数据访问层","D.网络传输层"],"answer":"C","analysis":"SQL注入攻击发生在数据访问层，因为攻击者通过构造恶意输入，使应用程序执行非预期的SQL语句。","category":"SQL注入"},
+    {"id":"单选题7","type":"单选题","question":"单选题7、以下哪个不是SQL注入的常见分类？","options":["A.数字型注入","B.字符型注入","C.搜索型注入","D.文件型注入"],"answer":"D","analysis":"SQL注入常见分类包括数字型、字符型、搜索型、盲注、堆叠注入等。文件型注入不属于SQL注入分类。","category":"SQL注入"},
+    {"id":"单选题8","type":"单选题","question":"单选题8、预防SQL注入最有效的方法是？","options":["A.使用HTTPS","B.使用预编译语句（参数化查询）","C.使用防火墙","D.限制数据库权限"],"answer":"B","analysis":"预编译语句将SQL语句结构与数据分离，使输入数据不会被解释为SQL代码。","category":"SQL注入"},
+    {"id":"单选题9","type":"单选题","question":"单选题9、以下哪个工具是专门用于SQL注入检测的？","options":["A.Nmap","B.Wireshark","C.sqlmap","D.BurpSuite"],"answer":"C","analysis":"sqlmap是专门用于检测和利用SQL注入漏洞的开源工具。","category":"SQL注入"},
+    {"id":"单选题10","type":"单选题","question":"单选题10、在MySQL中，information_schema库的作用是？","options":["A.存储用户数据","B.存储数据库元数据信息","C.存储系统日志","D.存储临时数据"],"answer":"B","analysis":"information_schema是MySQL的系统数据库，存储了数据库、表、列等元数据信息。","category":"SQL注入"},
+    {"id":"单选题11","type":"单选题","question":"单选题11、以下哪种方法不能用于判断注入点？","options":["A.添加单引号观察报错","B.添加and 1=1和and 1=2对比","C.使用sleep()函数","D.修改URL协议"],"answer":"D","analysis":"判断注入点的常用方法包括：单引号测试、逻辑测试、时间延迟测试等。修改URL协议无法判断注入点。","category":"SQL注入"},
+    {"id":"单选题12","type":"单选题","question":"单选题12、布尔盲注的核心原理是？","options":["A.通过页面返回的真假判断条件真假","B.通过时间延迟判断条件真假","C.通过报错信息获取数据","D.通过union查询获取数据"],"answer":"A","analysis":"布尔盲注通过构造条件语句，根据页面返回的不同状态来判断条件是否成立。","category":"SQL注入"},
+    {"id":"单选题13","type":"单选题","question":"单选题13、时间盲注中常用的延迟函数是？","options":["A.concat()","B.sleep()","C.substr()","D.ascii()"],"answer":"B","analysis":"sleep()函数用于在MySQL中引入时间延迟，是时间盲注的核心函数。","category":"SQL注入"},
+    {"id":"单选题14","type":"单选题","question":"单选题14、以下哪个不是报错注入的常用函数？","options":["A.extractvalue()","B.updatexml()","C.floor()","D.version()"],"answer":"D","analysis":"报错注入常用函数包括extractvalue()、updatexml()、floor()等。version()只是获取版本信息的函数。","category":"SQL注入"},
+    {"id":"单选题15","type":"单选题","question":"单选题15、宽字节注入利用的字符集编码是？","options":["A.UTF-8","B.ASCII","C.GBK","D.Unicode"],"answer":"C","analysis":"宽字节注入主要针对GBK编码的数据库。","category":"SQL注入"},
+    {"id":"单选题16","type":"单选题","question":"单选题16、HTTP Header注入通常出现在哪个位置？","options":["A.URL参数","B.表单数据","C.User-Agent或Cookie","D.请求体"],"answer":"C","analysis":"HTTP Header注入发生在请求头字段中，常见于User-Agent、Cookie等字段。","category":"SQL注入"},
+    {"id":"单选题17","type":"单选题","question":"单选题17、二次注入的核心原理是？","options":["A.直接在URL中注入","B.先将恶意数据存入数据库，再在其他页面触发","C.通过Cookie注入","D.通过文件上传注入"],"answer":"B","analysis":"二次注入是指攻击者先将恶意数据存入数据库，当这些数据被读取并用于构造SQL查询时触发注入。","category":"SQL注入"},
+    {"id":"单选题18","type":"单选题","question":"单选题18、堆叠查询（Stacked Query）注入的特点是？","options":["A.只能执行SELECT语句","B.可以执行多条SQL语句","C.不需要闭合引号","D.只能用于MySQL"],"answer":"B","analysis":"堆叠查询注入允许攻击者执行多条SQL语句，用分号分隔。","category":"SQL注入"},
+    {"id":"单选题19","type":"单选题","question":"单选题19、以下哪种防御手段可以防止SQL注入？","options":["A.使用存储过程","B.输入验证和过滤","C.使用WAF","D.以上都可以"],"answer":"D","analysis":"多种手段可以共同防御SQL注入。","category":"SQL注入"},
+    {"id":"单选题20","type":"单选题","question":"单选题20、在 sqli-labs 中，Less-11 使用的是哪种注入方式？","options":["A.GET 方式","B.POST 方式","C.Cookie 方式","D.Header 方式"],"answer":"B","analysis":"sqli-labs 的 Less-11 是基于 POST 方式的注入。","category":"SQL注入"},
+    {"id":"单选题21","type":"单选题","question":"单选题21、以下哪个不是 SQLmap 的常用参数？","options":["A.-u","B.--dbs","C.--tables","D.--ping"],"answer":"D","analysis":"--ping 不是 sqlmap 的常用参数。","category":"SQL注入"},
+    {"id":"单选题22","type":"单选题","question":"单选题22、SQL 注入中 order by 语句的作用是？","options":["A.排序结果","B.判断列数","C.删除数据","D.插入数据"],"answer":"B","analysis":"order by 语句用于判断查询结果的列数。","category":"SQL注入"},
+    {"id":"单选题23","type":"单选题","question":"单选题23、以下哪种数据库不支持堆叠查询？","options":["A.MySQL","B.SQL Server","C.Oracle","D.SQLite"],"answer":"C","analysis":"Oracle 不支持堆叠查询（Stacked Query）。","category":"SQL注入"},
+    {"id":"单选题24","type":"单选题","question":"单选题24、DNS 外带注入的原理是？","options":["A.通过 DNS 查询将数据发送到攻击者服务器","B.通过 DNS 解析漏洞获取数据","C.通过 DNS 欺骗获取数据","D.通过 DNS 缓存投毒获取数据"],"answer":"A","analysis":"DNS 外带注入通过 DNS 查询将数据发送到攻击者控制的服务器。","category":"SQL注入"},
+    {"id":"单选题25","type":"单选题","question":"单选题25、以下哪个函数可以获取 MySQL 版本信息？","options":["A.database()","B.user()","C.version()","D.schema()"],"answer":"C","analysis":"version() 函数返回 MySQL 数据库的版本信息。","category":"SQL注入"},
+    {"id":"单选题26","type":"单选题","question":"单选题26、sqlmap 中，-p 参数的作用是？","options":["A.指定代理","B.指定注入参数","C.指定密码","D.指定端口"],"answer":"B","analysis":"-p 参数用于指定要测试的注入参数。","category":"SQL注入"},
+    {"id":"单选题27","type":"单选题","question":"单选题27、联合注入要求两个查询的列数必须？","options":["A.不同","B.相同","C.前者多于后者","D.后者多于前者"],"answer":"B","analysis":"联合注入要求两个 SELECT 语句的列数必须相同。","category":"SQL注入"},
+    {"id":"单选题28","type":"单选题","question":"单选题28、以下哪个字符在 SQL 中是单行注释符？","options":["A./*","B.//","C.--","D.##"],"answer":"C","analysis":"-- 是 SQL 中的单行注释符。","category":"SQL注入"},
+    {"id":"单选题29","type":"单选题","question":"单选题29、BurpSuite 中，Intruder 模块的主要功能是？","options":["A.拦截 HTTP 请求","B.自动化暴力测试","C.重放请求","D.扫描漏洞"],"answer":"B","analysis":"Intruder 模块主要用于自动化暴力测试。","category":"SQL注入"},
+    {"id":"单选题30","type":"单选题","question":"单选题30、以下哪个不是 MySQL 数据库的默认端口？","options":["A.3306","B.3307","C.1433","D.以上都不是默认端口"],"answer":"C","analysis":"1433 是 SQL Server 的默认端口，MySQL 默认是 3306。","category":"SQL注入"},
+    {"id":"单选题31","type":"单选题","question":"单选题31、在 Union 注入中，NULL 的作用是？","options":["A.替代具体数值以避免类型错误","B.表示空值查询","C.注释后续代码","D.表示布尔假"],"answer":"A","analysis":"在 Union 注入中，NULL 用于替代具体数值以避免类型错误。","category":"SQL注入"},
+    {"id":"单选题32","type":"单选题","question":"单选题32、以下哪种注入方式效率最低？","options":["A.联合注入","B.报错注入","C.时间盲注","D.布尔盲注"],"answer":"C","analysis":"时间盲注效率最低，因为需要等待时间延迟。","category":"SQL注入"},
+    {"id":"单选题33","type":"单选题","question":"单选题33、WAF 的全称是？","options":["A.Web Application Firewall","B.Web Access Filter","C.Wide Area Firewall","D.Web Attack Framework"],"answer":"A","analysis":"WAF 全称是 Web Application Firewall。","category":"数据库防火墙"},
+    {"id":"单选题34","type":"单选题","question":"单选题34、以下哪个是 sqlmap 检测注入时的默认级别（level）？","options":["A.1","B.3","C.5","D.2"],"answer":"A","analysis":"sqlmap 的默认检测级别是 1。","category":"SQL注入"},
+    {"id":"单选题35","type":"单选题","question":"单选题35、MySQL 中，group_concat()函数的作用是？","options":["A.统计记录数","B.将多行数据合并为一行","C.获取最大值","D.字符串截取"],"answer":"B","analysis":"group_concat() 函数用于将多行数据合并为一行。","category":"SQL注入"},
+    {"id":"单选题36","type":"单选题","question":"单选题36、以下哪个不是 BurpSuite 的功能模块？","options":["A.Proxy","B.Scanner","C.Decoder","D.Compiler"],"answer":"D","analysis":"Compiler 不是 BurpSuite 的功能模块。","category":"SQL注入"},
+    {"id":"单选题37","type":"单选题","question":"单选题37、报错注入中，extractvalue()函数报错的原因是？","options":["A.SQL 语法错误","B.XPath 路径格式非法","C.列数不匹配","D.字段类型错误"],"answer":"B","analysis":"extractvalue() 函数报错是因为 XPath 路径格式非法。","category":"SQL注入"},
+    {"id":"单选题38","type":"单选题","question":"单选题38、以下哪种方式可以绕过 WAF 对 union 的过滤？","options":["A.使用 uNiOn 大小写混写","B.使用双写 uniunionon","C.使用内联注释 un/**/ion","D.以上都可以"],"answer":"D","analysis":"以上三种方式都可以用于绕过 WAF 对 union 的过滤。","category":"数据库防火墙"},
+    {"id":"单选题39","type":"单选题","question":"单选题39、sqlmap 中--level=3 及以上会自动检测什么？","options":["A.POST 参数","B.Cookie 参数","C.HTTP Header 参数","D.XML 参数"],"answer":"C","analysis":"--level=3 及以上会自动检测 HTTP Header 参数。","category":"SQL注入"},
+    {"id":"单选题40","type":"单选题","question":"单选题40、以下哪种 SQL 注入不依赖页面是否有回显？","options":["A.联合注入","B.报错注入","C.时间盲注","D.堆叠注入"],"answer":"C","analysis":"时间盲注不依赖页面是否有回显，只依赖响应时间。","category":"SQL注入"},
+    {"id":"单选题41","type":"单选题","question":"单选题41、在 sqli-labs 中，第一关（Less-1）属于哪种注入类型？","options":["A.数字型注入","B.字符型注入（单引号）","C.布尔盲注","D.时间盲注"],"answer":"B","analysis":"sqli-labs 的 Less-1 是基于单引号的字符型注入。","category":"SQL注入"},
+    {"id":"单选题42","type":"单选题","question":"单选题42、以下哪个 MySQL 函数可以读取服务器上的文件？","options":["A.file_get()","B.read_file()","C.load_file()","D.get_file()"],"answer":"C","analysis":"load_file() 函数用于读取服务器上的文件。","category":"SQL注入"},
+    {"id":"单选题43","type":"单选题","question":"单选题43、MySQL 中，into outfile 语句的作用是？","options":["A.导入数据","B.将查询结果写入文件","C.备份数据库","D.创建视图"],"answer":"B","analysis":"into outfile 语句用于将查询结果写入文件。","category":"SQL注入"},
+    {"id":"单选题44","type":"单选题","question":"单选题44、以下哪个不是常见的 SQL 注入测试 payload？","options":["A.' or '1'='1","B.1 and 1=1","C.1; drop table users--","D.SELECT * FROM users"],"answer":"D","analysis":"SELECT * FROM users 是正常查询语句，不是注入测试 payload。","category":"SQL注入"},
+    {"id":"单选题45","type":"单选题","question":"单选题45、BurpSuite 的 Proxy 模块监听的默认端口是？","options":["A.8888","B.8080","C.9090","D.7070"],"answer":"B","analysis":"BurpSuite 的 Proxy 模块默认监听 8080 端口。","category":"SQL注入"},
+    {"id":"单选题46","type":"单选题","question":"单选题46、以下哪种编码方式常用于 WAF 绕过？","options":["A.Base64","B.URL 编码","C.MD5","D.SHA256"],"answer":"B","analysis":"URL 编码常用于 WAF 绕过。","category":"数据库防火墙"},
+    {"id":"单选题47","type":"单选题","question":"单选题47、MySQL 中，@@version_compile_os 变量存储什么信息？","options":["A.数据库版本","B.编译时的操作系统","C.数据库安装路径","D.字符集信息"],"answer":"B","analysis":"@@version_compile_os 存储编译时的操作系统信息。","category":"SQL注入"},
+    {"id":"单选题48","type":"单选题","question":"单选题48、以下哪个工具不属于 Web 渗透测试常用工具？","options":["A.sqlmap","B.BurpSuite","C.Photoshop","D.Nmap"],"answer":"C","analysis":"Photoshop 是图像处理软件，不是渗透测试工具。","category":"SQL注入"},
+    {"id":"单选题49","type":"单选题","question":"单选题49、在进行布尔盲注时，以下哪个表达式可以判断数据库名第一个字符的 ASCII 值是否为 115？","options":["A.and ascii(substr(database(),1,1))=115","B.and substr(database(),1,1)>115","C.and length(database())=1","D.and database() like '%s%'"],"answer":"A","analysis":"通过 ascii(substr(database(),1,1))=115 可以判断数据库名第一个字符的 ASCII 值是否为 115。","category":"SQL注入"},
+    {"id":"单选题50","type":"单选题","question":"单选题50、sqlmap 中--dump 参数的作用是？","options":["A.转储指定表的数据","B.删除表","C.获取数据库列表","D.检测注入点"],"answer":"A","analysis":"--dump 参数用于转储指定表的数据。","category":"SQL注入"},
+    {"id":"多选题1","type":"多选题","question":"多选题1、以下哪些属于SQL注入的类型？","options":["A.数字型注入","B.字符型注入","C.XSS注入","D.搜索型注入"],"answer":["A","B","D"],"analysis":"XSS注入属于跨站脚本攻击，不属于SQL注入。","category":"SQL注入"},
+    {"id":"多选题2","type":"多选题","question":"多选题2、以下哪些是MySQL的注释方式？","options":["A.--","B.#","C./* */","D.//"],"answer":["A","B","C"],"analysis":"//不是MySQL的注释符。","category":"SQL注入"},
+    {"id":"多选题3","type":"多选题","question":"多选题3、以下哪些是SQLmap支持的注入技术？","options":["A.布尔盲注","B.时间盲注","C.报错注入","D.联合查询注入"],"answer":["A","B","C","D"],"analysis":"sqlmap支持多种注入技术。","category":"SQL注入"},
+    {"id":"多选题4","type":"多选题","question":"多选题4、以下哪些函数可以用于盲注？","options":["A.substr()","B.ascii()","C.sleep()","D.length()"],"answer":["A","B","C","D"],"analysis":"盲注常用函数包括substr()、ascii()、sleep()、length()等。","category":"SQL注入"},
+    {"id":"多选题5","type":"多选题","question":"多选题5、以下哪些是防御SQL注入的有效手段？","options":["A.预编译语句","B.输入过滤","C.最小权限原则","D.使用HTTPS"],"answer":["A","B","C"],"analysis":"HTTPS只能加密传输数据，不能防止SQL注入。","category":"SQL注入"},
+    {"id":"多选题6","type":"多选题","question":"多选题6、以下哪些属于报错注入的常用函数？","options":["A.extractvalue()","B.updatexml()","C.floor()","D.version()"],"answer":["A","B","C"],"analysis":"version()只是获取版本信息的函数。","category":"SQL注入"},
+    {"id":"多选题7","type":"多选题","question":"多选题7、SQL注入的危害包括哪些？","options":["A.数据泄露","B.数据篡改","C.服务器被控制","D.网络拥塞"],"answer":["A","B","C"],"analysis":"网络拥塞是DDoS攻击的特点，不是SQL注入的直接危害。","category":"SQL注入"},
+    {"id":"多选题8","type":"多选题","question":"多选题8、以下哪些是sqli-labs包含的注入类型？","options":["A.GET注入","B.POST注入","C.Header注入","D.盲注"],"answer":["A","B","C","D"],"analysis":"sqli-labs包含多种注入类型的练习关卡。","category":"SQL注入"},
+    {"id":"多选题9","type":"多选题","question":"多选题9、以下哪些可以用于判断SQL注入点？","options":["A.单引号测试","B.and 1=1测试","C.sleep()测试","D.端口扫描"],"answer":["A","B","C"],"analysis":"端口扫描是网络探测技术，不能判断注入点。","category":"SQL注入"},
+    {"id":"多选题10","type":"多选题","question":"多选题10、以下哪些属于Union注入的步骤？","options":["A.判断列数","B.判断显示位","C.获取数据库名","D.修改密码"],"answer":["A","B","C"],"analysis":"修改密码不是注入步骤。","category":"SQL注入"},
+    {"id":"多选题11","type":"多选题","question":"多选题11、以下哪些是字符型注入的闭合方式？","options":["A.单引号","B.双引号","C.括号","D.反斜杠"],"answer":["A","B","C"],"analysis":"反斜杠是转义字符，不是闭合方式。","category":"SQL注入"},
+    {"id":"多选题12","type":"多选题","question":"多选题12、以下哪些是BurpSuite的功能模块？","options":["A.Proxy","B.Repeater","C.Intruder","D.Scanner"],"answer":["A","B","C","D"],"analysis":"BurpSuite包含多个功能模块。","category":"SQL注入"},
+    {"id":"多选题13","type":"多选题","question":"多选题13、以下哪些可以用于Cookie注入？","options":["A.修改Cookie中的参数值","B.使用JavaScript注入","C.使用BurpSuite抓包修改","D.使用sqlmap的--cookie参数"],"answer":["A","C","D"],"analysis":"JavaScript注入属于XSS攻击。","category":"SQL注入"},
+    {"id":"多选题14","type":"多选题","question":"多选题14、以下哪些是WAF绕过的常见方法？","options":["A.大小写混合","B.双写关键字","C.编码绕过","D.内联注释"],"answer":["A","B","C","D"],"analysis":"WAF绕过技术包括大小写混合、双写关键字、编码绕过、内联注释等。","category":"数据库防火墙"},
+    {"id":"多选题15","type":"多选题","question":"多选题15、以下哪些是数据库安全审计的内容？","options":["A.用户登录记录","B.SQL执行日志","C.权限变更记录","D.数据修改记录"],"answer":["A","B","C","D"],"analysis":"数据库安全审计包括用户登录记录、SQL执行日志、权限变更记录、数据修改记录等。","category":"审计日志"},
+    {"id":"多选题16","type":"多选题","question":"多选题16、以下哪些是MySQL中用于提权的函数或特性？","options":["A.load_file()","B.into outfile","C.xp_cmdshell","D.UDF自定义函数"],"answer":["A","B","D"],"analysis":"xp_cmdshell是SQL Server的功能。","category":"SQL注入"},
+    {"id":"多选题17","type":"多选题","question":"多选题17、以下哪些是数据库中间件可能带来的安全风险？","options":["A.SQL注入","B.权限绕过","C.信息泄露","D.拒绝服务"],"answer":["A","B","C","D"],"analysis":"数据库中间件可能带来多种安全风险。","category":"数据库防火墙"},
+    {"id":"多选题18","type":"多选题","question":"多选题18、以下哪些是sqlmap的常用参数？","options":["A.-u（指定URL）","B.--dbs（列举数据库）","C.--tables（列举表）","D.--level（设置检测级别）"],"answer":["A","B","C","D"],"analysis":"sqlmap常用参数包括这些选项。","category":"SQL注入"},
+    {"id":"多选题19","type":"多选题","question":"多选题19、以下哪些属于布尔盲注的常用判断方式？","options":["A.and 1=1页面正常","B.and 1=2页面异常","C.使用sleep()观察延迟","D.页面返回不同内容判断真假"],"answer":["A","B","D"],"analysis":"sleep()是时间盲注的方法。","category":"SQL注入"},
+    {"id":"多选题20","type":"多选题","question":"多选题20、以下哪些是SQL注入的常见危险函数？","options":["A.load_file()","B.sleep()","C.extractvalue()","D.group_concat()"],"answer":["A","B","C"],"analysis":"group_concat()是数据聚合函数，不算危险函数。","category":"SQL注入"},
+    {"id":"多选题21","type":"多选题","question":"多选题21、BurpSuite Intruder模块支持哪些攻击模式？","options":["A.Sniper（狙击手）","B.Battering ram（攻城槌）","C.Pitchfork（鱼叉）","D.Cluster bomb（集束炸弹）"],"answer":["A","B","C","D"],"analysis":"BurpSuite Intruder支持四种攻击模式。","category":"SQL注入"},
+    {"id":"多选题22","type":"多选题","question":"多选题22、以下哪些是进行SQL注入测试前需要了解的信息？","options":["A.目标数据库类型","B.注入点位置","C.服务器操作系统","D.目标网站域名注册时间"],"answer":["A","B","C"],"analysis":"域名注册时间与SQL注入测试无关。","category":"SQL注入"},
+    {"id":"多选题23","type":"多选题","question":"多选题23、以下哪些情况会导致SQL注入漏洞？","options":["A.使用字符串拼接构造SQL语句","B.未对用户输入进行验证","C.数据库密码复杂度不够","D.错误信息未屏蔽直接显示"],"answer":["A","B","D"],"analysis":"密码复杂度与SQL注入漏洞无关。","category":"SQL注入"},
+    {"id":"多选题24","type":"多选题","question":"多选题24、以下哪些属于堆叠注入可以执行的操作？","options":["A.插入数据","B.删除表","C.创建用户","D.执行系统命令"],"answer":["A","B","C"],"analysis":"执行系统命令需要额外提权，不是堆叠注入本身的功能。","category":"SQL注入"},
+    {"id":"多选题25","type":"多选题","question":"多选题25、以下哪些是时间盲注中常用的技术手段？","options":["A.使用sleep()引入延迟","B.使用if()条件判断","C.使用benchmark()引入延迟","D.使用substring()逐字符提取"],"answer":["A","B","C","D"],"analysis":"时间盲注常用技术包括sleep()延迟、if()条件判断、benchmark()延迟、substring()逐字符提取等。","category":"SQL注入"},
+    {"id":"多选题26","type":"多选题","question":"多选题26、以下哪些是HTTP请求头中可能存在注入点的字段？","options":["A.User-Agent","B.Cookie","C.Referer","D.X-Forwarded-For"],"answer":["A","B","C","D"],"analysis":"HTTP请求头中可能存在注入点的字段包括User-Agent、Cookie、Referer、X-Forwarded-For等。","category":"SQL注入"},
+    {"id":"多选题27","type":"多选题","question":"多选题27、以下哪些是绕过WAF关键字过滤的方法？","options":["A.使用等价函数替换","B.使用注释分割关键字","C.使用十六进制编码","D.使用URL双重编码"],"answer":["A","B","C","D"],"analysis":"绕过WAF关键字过滤的方法包括等价函数替换、注释分割、十六进制编码、URL双重编码等。","category":"数据库防火墙"},
+    {"id":"多选题28","type":"多选题","question":"多选题28、以下哪些是联合注入获取数据的步骤？","options":["A.order by判断列数","B.union select确定显示位","C.查询information_schema获取表名","D.从目标表获取数据"],"answer":["A","B","C","D"],"analysis":"联合注入获取数据的步骤包括这些选项。","category":"SQL注入"},
+    {"id":"多选题29","type":"多选题","question":"多选题29、以下哪些属于数据库加密的方法？","options":["A.透明数据加密TDE","B.列级加密","C.传输层SSL加密","D.应用层加密"],"answer":["A","B","C","D"],"analysis":"数据库加密方法包括透明数据加密、列级加密、传输层SSL加密、应用层加密等。","category":"数据加密"},
+    {"id":"多选题30","type":"多选题","question":"多选题30、以下哪些是数据库账户安全管理的最佳实践？","options":["A.使用强密码","B.定期更换密码","C.遵循最小权限原则","D.禁止使用root账户运行Web服务"],"answer":["A","B","C","D"],"analysis":"数据库账户安全管理的最佳实践包括这些选项。","category":"访问控制"},
+    {"id":"多选题31","type":"多选题","question":"多选题31、以下哪些可以作为SQL注入的注入点？","options":["A.URL的GET参数","B.表单的POST数据","C.Cookie值","D.HTTP请求头字段"],"answer":["A","B","C","D"],"analysis":"SQL注入的注入点可以出现在URL参数、POST数据、Cookie值、HTTP请求头字段等位置。","category":"SQL注入"},
+    {"id":"多选题32","type":"多选题","question":"多选题32、以下哪些是报错注入利用的方式？","options":["A.利用extractvalue()的XPath错误","B.利用updatexml()的XPath错误","C.利用floor()+rand()的主键冲突","D.利用exp()的数值溢出"],"answer":["A","B","C","D"],"analysis":"报错注入可以利用这些方式。","category":"SQL注入"},
+    {"id":"多选题33","type":"多选题","question":"多选题33、以下哪些是BurpSuite Proxy模块的功能？","options":["A.拦截HTTP/HTTPS请求","B.修改请求参数","C.转发请求","D.记录请求历史"],"answer":["A","B","C","D"],"analysis":"BurpSuite Proxy模块可以拦截、修改、转发请求，记录请求历史。","category":"SQL注入"},
+    {"id":"多选题34","type":"多选题","question":"多选题34、以下哪些是sqlmap检测注入时常用的注入类型？","options":["A.布尔盲注","B.时间盲注","C.报错注入","D.联合查询注入"],"answer":["A","B","C","D"],"analysis":"sqlmap支持多种注入类型。","category":"SQL注入"},
+    {"id":"多选题35","type":"多选题","question":"多选题35、以下哪些属于SQL注入漏洞的代码级修复方案？","options":["A.使用预编译语句","B.使用存储过程","C.对输入进行白名单验证","D.使用ORM框架"],"answer":["A","B","C","D"],"analysis":"SQL注入漏洞的代码级修复方案包括这些选项。","category":"SQL注入"},
+    {"id":"多选题36","type":"多选题","question":"多选题36、以下哪些是布尔盲注和时间盲注的共同点？","options":["A.都不依赖页面直接显示查询结果","B.都需要逐字符提取数据","C.效率比联合注入低","D.都需要使用sleep()函数"],"answer":["A","B","C"],"analysis":"只有时间盲注需要sleep()函数。","category":"SQL注入"},
+    {"id":"多选题37","type":"多选题","question":"多选题37、以下哪些是MySQL的内置安全函数？","options":["A.MD5()","B.SHA1()","C.AES_ENCRYPT()","D.PASSWORD()"],"answer":["A","B","C","D"],"analysis":"MySQL提供多种内置安全函数。","category":"数据加密"},
+    {"id":"多选题38","type":"多选题","question":"多选题38、以下哪些是WAF防护SQL注入的手段？","options":["A.正则匹配SQL关键字","B.语义分析","C.机器学习检测异常请求","D.IP黑名单"],"answer":["A","B","C","D"],"analysis":"WAF防护SQL注入的手段包括这些选项。","category":"数据库防火墙"},
+    {"id":"多选题39","type":"多选题","question":"多选题39、以下哪些是使用sqlmap进行POST注入时可以使用的方式？","options":["A.--data指定POST参数","B.--forms自动提取表单","C.-r指定请求文件","D.--cookie指定认证信息"],"answer":["A","B","C","D"],"analysis":"--cookie用于Cookie注入。","category":"SQL注入"},
+    {"id":"多选题40","type":"多选题","question":"多选题40、以下哪些属于数据库纵深防御体系的层次？","options":["A.网络层防护","B.应用层防护","C.数据库层防护","D.操作系统层防护"],"answer":["A","B","C","D"],"analysis":"数据库纵深防御体系包括这些层次。","category":"数据库防火墙"},
+    {"id":"多选题41","type":"多选题","question":"多选题41、以下哪些是MySQL中可以获取系统信息的变量或函数？","options":["A.@@version","B.@@hostname","C.@@datadir","D.@@basedir"],"answer":["A","B","C","D"],"analysis":"MySQL中可以获取系统信息的变量包括这些选项。","category":"SQL注入"},
+    {"id":"多选题42","type":"多选题","question":"多选题42、以下哪些属于联合注入失败的可能原因？","options":["A.列数不匹配","B.数据类型不匹配","C.UNION关键字被过滤","D.页面无显示位"],"answer":["A","B","C","D"],"analysis":"联合注入失败的原因包括这些选项。","category":"SQL注入"},
+    {"id":"多选题43","type":"多选题","question":"多选题43、以下哪些是数据库日志的类型？","options":["A.查询日志","B.错误日志","C.二进制日志","D.慢查询日志"],"answer":["A","B","C","D"],"analysis":"数据库日志类型包括这些选项。","category":"审计日志"},
+    {"id":"多选题44","type":"多选题","question":"多选题44、以下哪些属于SQL注入自动化工具？","options":["A.sqlmap","B.havij","C.jSQL Injection","D.SQLNinja"],"answer":["A","B","C","D"],"analysis":"常见的SQL注入自动化工具包括这些选项。","category":"SQL注入"},
+    {"id":"多选题45","type":"多选题","question":"多选题45、以下哪些是宽字节注入的利用条件？","options":["A.数据库使用GBK等多字节编码","B.使用addslashes()或magic_quotes进行转义","C.传输数据使用GBK编码","D.数据库连接字符集为GBK"],"answer":["A","B","C","D"],"analysis":"宽字节注入的利用条件包括这些选项。","category":"SQL注入"},
+    {"id":"多选题46","type":"多选题","question":"多选题46、以下哪些属于BurpSuite中Repeater模块的常见使用场景？","options":["A.手动测试SQL注入payload","B.观察不同参数下的响应差异","C.测试越权漏洞","D.验证漏洞是否存在"],"answer":["A","B","C","D"],"analysis":"Repeater模块常用于这些场景。","category":"SQL注入"},
+    {"id":"多选题47","type":"多选题","question":"多选题47、以下哪些是数据库备份策略的类型？","options":["A.全量备份","B.增量备份","C.差异备份","D.事务日志备份"],"answer":["A","B","C","D"],"analysis":"数据库备份策略包括这些类型。","category":"备份恢复"},
+    {"id":"多选题48","type":"多选题","question":"多选题48、以下哪些属于SQL注入中信息收集阶段的目标？","options":["A.获取数据库版本","B.获取当前数据库名","C.获取数据库用户名","D.获取表名和列名"],"answer":["A","B","C","D"],"analysis":"SQL注入信息收集阶段的目标包括这些选项。","category":"SQL注入"},
+    {"id":"多选题49","type":"多选题","question":"多选题49、以下哪些是堆叠注入的利用场景？","options":["A.修改数据库数据","B.创建新的数据库用户","C.执行存储过程","D.删除数据表"],"answer":["A","B","C","D"],"analysis":"堆叠注入可以用于这些操作。","category":"SQL注入"},
+    {"id":"多选题50","type":"多选题","question":"多选题50、以下哪些属于SQL注入的回显类型？","options":["A.直接回显（联合注入）","B.错误回显（报错注入）","C.布尔回显（布尔盲注）","D.时间回显（时间盲注）"],"answer":["A","B","C","D"],"analysis":"SQL注入的回显类型包括这些选项。","category":"SQL注入"},
+    {"id":"判断题1","type":"判断题","question":"判断题1、SQL注入只存在于MySQL数据库中。","answer":false,"analysis":"SQL注入可以存在于任何使用SQL的数据库系统中。","category":"SQL注入"},
+    {"id":"判断题2","type":"判断题","question":"判断题2、预编译语句可以有效防止SQL注入。","answer":true,"analysis":"预编译语句将SQL语句结构与数据分离。","category":"SQL注入"},
+    {"id":"判断题3","type":"判断题","question":"判断题3、数字型注入不需要闭合单引号。","answer":true,"analysis":"数字型注入的参数是数字类型，不带引号。","category":"SQL注入"},
+    {"id":"判断题4","type":"判断题","question":"判断题4、sqlmap只能用于GET方式的注入。","answer":false,"analysis":"sqlmap支持多种注入方式。","category":"SQL注入"},
+    {"id":"判断题5","type":"判断题","question":"判断题5、盲注比Union注入效率更高。","answer":false,"analysis":"盲注需要逐字符猜测数据，效率远低于Union注入。","category":"SQL注入"},
+    {"id":"判断题6","type":"判断题","question":"判断题6、使用HTTPS可以防止SQL注入。","answer":false,"analysis":"HTTPS只能加密数据传输，不能防止SQL注入。","category":"SQL注入"},
+    {"id":"判断题7","type":"判断题","question":"判断题7、BurpSuite的Proxy模块可以拦截和修改HTTP请求。","answer":true,"analysis":"BurpSuite的Proxy模块是一个HTTP代理，可以拦截和修改请求。","category":"SQL注入"},
+    {"id":"判断题8","type":"判断题","question":"判断题8、宽字节注入只对GBK编码有效。","answer":false,"analysis":"宽字节注入也可以针对其他多字节编码。","category":"SQL注入"},
+    {"id":"判断题9","type":"判断题","question":"判断题9、WAF可以完全防止所有SQL注入攻击。","answer":false,"analysis":"WAF不能完全防止所有攻击，攻击者可以通过各种绕过技术规避WAF检测。","category":"数据库防火墙"},
+    {"id":"判断题10","type":"判断题","question":"判断题10、存储过程比预编译语句更安全。","answer":false,"analysis":"存储过程本身也可能存在SQL注入漏洞。","category":"SQL注入"},
+    {"id":"判断题11","type":"判断题","question":"判断题11、SQL注入漏洞属于OWASP Top 10中的安全风险。","answer":true,"analysis":"SQL注入属于OWASP Top 10中的注入类漏洞。","category":"SQL注入"},
+    {"id":"判断题12","type":"判断题","question":"判断题12、order by语句只能用于排序查询结果。","answer":false,"analysis":"在SQL注入中，order by常被用于判断查询的列数。","category":"SQL注入"},
+    {"id":"判断题13","type":"判断题","question":"判断题13、information_schema库存储的是数据库的元数据信息。","answer":true,"analysis":"information_schema存储数据库、表、列等元数据信息。","category":"SQL注入"},
+    {"id":"判断题14","type":"判断题","question":"判断题14、使用黑名单过滤是防止SQL注入的最佳方案。","answer":false,"analysis":"黑名单过滤容易被绕过，最佳方案是使用预编译语句。","category":"SQL注入"},
+    {"id":"判断题15","type":"判断题","question":"判断题15、SQL注入只能通过Web页面进行，不能通过其他途径。","answer":false,"analysis":"SQL注入可以通过任何用户可控的输入途径进行。","category":"SQL注入"},
+    {"id":"判断题16","type":"判断题","question":"判断题16、布尔盲注通过页面响应的真假来逐步获取数据。","answer":true,"analysis":"布尔盲注通过构造条件语句，根据页面返回的不同状态来判断条件是否成立。","category":"SQL注入"},
+    {"id":"判断题17","type":"判断题","question":"判断题17、sqlmap工具是开源的SQL注入检测工具。","answer":true,"analysis":"sqlmap是开源工具，源代码可以在GitHub上获取。","category":"SQL注入"},
+    {"id":"判断题18","type":"判断题","question":"判断题18、联合注入需要两个查询语句的列数相同才能使用。","answer":true,"analysis":"UNION要求两个SELECT语句的列数相同且数据类型兼容。","category":"SQL注入"},
+    {"id":"判断题19","type":"判断题","question":"判断题19、BurpSuite的Intruder模块可以用于暴力破解密码。","answer":true,"analysis":"Intruder模块可以用于自动化测试，包括暴力破解密码。","category":"SQL注入"},
+    {"id":"判断题20","type":"判断题","question":"判断题20、在时间盲注中，sleep()函数执行时间越长说明注入越成功。","answer":false,"analysis":"sleep()函数的执行时间是固定的，与注入成功与否无关。","category":"SQL注入"},
+    {"id":"判断题21","type":"判断题","question":"判断题21、堆叠注入可以执行INSERT、UPDATE、DELETE等多种SQL语句。","answer":true,"analysis":"堆叠注入通过分号分隔多条SQL语句。","category":"SQL注入"},
+    {"id":"判断题22","type":"判断题","question":"判断题22、报错注入要求服务器必须将SQL错误信息返回给页面。","answer":true,"analysis":"报错注入依赖于服务器返回的错误信息来获取数据。","category":"SQL注入"},
+    {"id":"判断题23","type":"判断题","question":"判断题23、使用存储过程可以完全替代预编译语句防止SQL注入。","answer":false,"analysis":"存储过程本身也可能存在SQL注入漏洞。","category":"SQL注入"},
+    {"id":"判断题24","type":"判断题","question":"判断题24、SQL注入攻击需要攻击者具备高深的编程知识。","answer":false,"analysis":"SQL注入攻击可以使用自动化工具进行。","category":"SQL注入"},
+    {"id":"判断题25","type":"判断题","question":"判断题25、information_schema.tables表中存储了所有数据库的表名。","answer":true,"analysis":"information_schema.tables表存储了数据库中所有表的信息。","category":"SQL注入"},
+    {"id":"判断题26","type":"判断题","question":"判断题26、BurpSuite只能在Kali Linux系统上使用。","answer":false,"analysis":"BurpSuite可以在多种操作系统上使用。","category":"SQL注入"},
+    {"id":"判断题27","type":"判断题","question":"判断题27、sqlmap中，--level参数值越高，检测越彻底，但速度越慢。","answer":true,"analysis":"--level参数控制检测级别，值越高检测越全面。","category":"SQL注入"},
+    {"id":"判断题28","type":"判断题","question":"判断题28、所有数据库管理系统都存在SQL注入风险。","answer":true,"analysis":"只要使用SQL且存在用户可控输入，就存在SQL注入风险。","category":"SQL注入"},
+    {"id":"判断题29","type":"判断题","question":"判断题29、URL编码可以完全绕过所有WAF的SQL注入检测。","answer":false,"analysis":"URL编码可以绕过一些简单的WAF，但不能绕过所有WAF的检测。","category":"数据库防火墙"},
+    {"id":"判断题30","type":"判断题","question":"判断题30、数字型注入比字符型注入更容易利用。","answer":true,"analysis":"数字型注入不需要闭合引号，通常更容易利用。","category":"SQL注入"},
+    {"id":"判断题31","type":"判断题","question":"判断题31、SQL注入攻击只会影响数据库中的数据，不会影响操作系统。","answer":false,"analysis":"通过SQL注入可以执行系统命令。","category":"SQL注入"},
+    {"id":"判断题32","type":"判断题","question":"判断题32、BurpSuite的Repeater模块可以保存和重放HTTP请求。","answer":true,"analysis":"Repeater模块可以保存HTTP请求并随时重放。","category":"SQL注入"},
+    {"id":"判断题33","type":"判断题","question":"判断题33、联合注入（Union Based）不适用于盲注场景。","answer":true,"analysis":"联合注入需要页面有回显，不适用于盲注场景。","category":"SQL注入"},
+    {"id":"判断题34","type":"判断题","question":"判断题34、加密数据库密码可以防止SQL注入攻击。","answer":false,"analysis":"加密数据库密码只能保护密码本身，不能防止SQL注入攻击。","category":"SQL注入"},
+    {"id":"判断题35","type":"判断题","question":"判断题35、MySQL中，#号可以用来注释掉其后的SQL语句。","answer":true,"analysis":"#是MySQL的单行注释符。","category":"SQL注入"},
+    {"id":"判断题36","type":"判断题","question":"判断题36、SQL注入可以用于绕过Web应用的登录验证。","answer":true,"analysis":"通过SQL注入可以绕过登录验证。","category":"SQL注入"},
+    {"id":"判断题37","type":"判断题","question":"判断题37、sqlmap的--dbs参数用于获取当前数据库中的所有表名。","answer":false,"analysis":"--dbs参数用于获取所有数据库名称。","category":"SQL注入"},
+    {"id":"判断题38","type":"判断题","question":"判断题38、BurpSuite的Scanner模块需要Pro版才能使用完整功能。","answer":true,"analysis":"BurpSuite Community版的Scanner功能有限。","category":"SQL注入"},
+    {"id":"判断题39","type":"判断题","question":"判断题39、在MySQL中，version()函数返回数据库的版本号。","answer":true,"analysis":"version()函数返回MySQL数据库的版本信息。","category":"SQL注入"},
+    {"id":"判断题40","type":"判断题","question":"判断题40、SQL注入只能针对登录表单进行攻击。","answer":false,"analysis":"SQL注入可以针对任何用户可控的输入位置。","category":"SQL注入"},
+    {"id":"填空题1","type":"填空题","question":"填空题1、SQL注入中，判断列数通常使用___语句。","answer":"order by","analysis":"order by语句常被用于判断查询的列数。","category":"SQL注入"},
+    {"id":"填空题2","type":"填空题","question":"填空题2、在MySQL中，获取当前用户名的函数是___。","answer":"user()","analysis":"user()函数返回当前数据库用户名。","category":"SQL注入"},
+    {"id":"填空题3","type":"填空题","question":"填空题3、BurpSuite中用于重放请求的模块是___。","answer":"Repeater","analysis":"Repeater模块用于手动重放和修改HTTP请求。","category":"SQL注入"},
+    {"id":"填空题4","type":"填空题","question":"填空题4、SQL注入的英文全称是___。","answer":"SQL Injection","analysis":"SQL Injection是SQL注入的英文名称。","category":"SQL注入"},
+    {"id":"填空题5","type":"填空题","question":"填空题5、在Union注入中，判断显示位使用的是___语句。","answer":"union select","analysis":"union select语句用于确定哪些列会在页面显示。","category":"SQL注入"},
+    {"id":"填空题6","type":"填空题","question":"填空题6、盲注中获取字符串长度的函数是___。","answer":"length()","analysis":"length()函数用于获取字符串的长度。","category":"SQL注入"},
+    {"id":"填空题7","type":"填空题","question":"填空题7、sqlmap中获取所有数据库的参数是___。","answer":"--dbs","analysis":"--dbs参数用于列举所有数据库。","category":"SQL注入"},
+    {"id":"填空题8","type":"填空题","question":"填空题8、报错注入中extractvalue()函数的第二个参数是___路径。","answer":"XPath","analysis":"extractvalue()函数需要XPath路径作为第二个参数。","category":"SQL注入"},
+    {"id":"填空题9","type":"填空题","question":"填空题9、HTTP请求中，___方法通常用于提交表单数据。","answer":"POST","analysis":"POST方法常用于提交表单数据。","category":"SQL注入"},
+    {"id":"填空题10","type":"填空题","question":"填空题10、DNS外带注入需要攻击者拥有一个可控的___服务器。","answer":"DNS","analysis":"DNS外带注入需要攻击者拥有一个可控的DNS服务器。","category":"SQL注入"},
+    {"id":"填空题11","type":"填空题","question":"填空题11、在MySQL中，@@datadir变量存储的是数据库的___路径。","answer":"数据存储","analysis":"@@datadir变量存储MySQL数据文件的存储路径。","category":"SQL注入"},
+    {"id":"填空题12","type":"填空题","question":"填空题12、sqlmap中指定注入技术的参数是___。","answer":"--technique","analysis":"--technique参数用于指定注入技术类型。","category":"SQL注入"},
+    {"id":"填空题13","type":"填空题","question":"填空题13、布尔盲注中，页面正常返回表示条件为___。","answer":"真","analysis":"布尔盲注中，条件为真时页面正常返回。","category":"SQL注入"},
+    {"id":"填空题14","type":"填空题","question":"填空题14、在MySQL5.0以上版本中，___库存储了所有数据库和表的结构信息。","answer":"information_schema","analysis":"information_schema库存储数据库元数据信息。","category":"SQL注入"},
+    {"id":"填空题15","type":"填空题","question":"填空题15、sqlmap中获取当前数据库名的参数是___。","answer":"--current-db","analysis":"--current-db参数用于获取当前数据库名称。","category":"SQL注入"},
+    {"id":"填空题16","type":"填空题","question":"填空题16、BurpSuite中用于暴力破解的模块是___。","answer":"Intruder","analysis":"Intruder模块用于自动化暴力破解和模糊测试。","category":"SQL注入"},
+    {"id":"填空题17","type":"填空题","question":"填空题17、在SQL注入中，___函数可以将多行数据合并为一行显示。","answer":"group_concat()","analysis":"group_concat()函数用于将分组中的多行数据合并为一行。","category":"SQL注入"},
+    {"id":"填空题18","type":"填空题","question":"填空题18、WAF的全称是___（英文）。","answer":"Web Application Firewall","analysis":"Web Application Firewall是Web应用防火墙的英文全称。","category":"数据库防火墙"},
+    {"id":"填空题19","type":"填空题","question":"填空题19、BurpSuite 的代理监听默认端口是___。","answer":"8080","analysis":"BurpSuite默认监听8080端口作为代理端口。","category":"SQL注入"},
+    {"id":"填空题20","type":"填空题","question":"填空题20、___注入是指先将恶意数据存入数据库，再在其他页面触发的注入方式。","answer":"二次","analysis":"二次注入需要先存储恶意数据，再在后续操作中触发。","category":"SQL注入"},
+    {"id":"填空题21","type":"填空题","question":"填空题21、在MySQL中，获取数据库版本的函数是___。","answer":"version()","analysis":"version()函数返回MySQL数据库的版本信息。","category":"SQL注入"},
+    {"id":"填空题22","type":"填空题","question":"填空题22、时间盲注中，MySQL常用___函数引入延迟。","answer":"sleep()","analysis":"sleep()函数用于在MySQL中引入时间延迟。","category":"SQL注入"},
+    {"id":"填空题23","type":"填空题","question":"填空题23、sqlmap指定目标URL的参数是___。","answer":"-u","analysis":"-u参数用于指定目标URL。","category":"SQL注入"},
+    {"id":"填空题24","type":"填空题","question":"填空题24、在联合注入中，两个SELECT语句的___必须相同。","answer":"列数","analysis":"联合注入要求两个SELECT语句的列数必须一致。","category":"SQL注入"},
+    {"id":"填空题25","type":"填空题","question":"填空题25、布尔盲注使用___函数逐字节提取字符数据。","answer":"substr()或mid()","analysis":"substr()或mid()函数用于截取字符串。","category":"SQL注入"},
+    {"id":"填空题26","type":"填空题","question":"填空题26、SQL注入测试中，添加单引号'观察是否___，是判断注入点的常用方法。","answer":"报错","analysis":"添加单引号观察报错是判断注入点的常用方法。","category":"SQL注入"},
+    {"id":"填空题27","type":"填空题","question":"填空题27、sqlmap中获取指定数据库所有表的参数是___。","answer":"--tables","analysis":"--tables参数用于列举当前数据库中的表。","category":"SQL注入"},
+    {"id":"填空题28","type":"填空题","question":"填空题28、BurpSuite中用于对数据进行编解码的模块是___。","answer":"Decoder","analysis":"Decoder模块用于对数据进行编解码。","category":"SQL注入"},
+    {"id":"填空题29","type":"填空题","question":"填空题29、在MySQL中，ASCII码115对应的字母是___。","answer":"s","analysis":"ASCII码115对应小写字母s。","category":"SQL注入"},
+    {"id":"填空题30","type":"填空题","question":"填空题30、SQL注入中，数字型注入的参数类型是___类型。","answer":"整数（数字）","analysis":"数字型注入的参数是数字类型。","category":"SQL注入"},
+    {"id":"填空题31","type":"填空题","question":"填空题31、sqlmap中获取指定表所有列名的参数是___。","answer":"--columns","analysis":"--columns参数用于获取表的列名。","category":"SQL注入"},
+    {"id":"填空题32","type":"填空题","question":"填空题32、BurpSuite拦截HTTPS需要在浏览器中安装BurpSuite的___证书。","answer":"CA","analysis":"BurpSuite需要安装CA证书才能拦截HTTPS流量。","category":"SQL注入"},
+    {"id":"填空题33","type":"填空题","question":"填空题33、SQL注入防御中，___查询（参数化查询）是最根本的防御措施。","answer":"预编译（参数化）","analysis":"预编译语句是防止SQL注入的最佳实践。","category":"SQL注入"},
+    {"id":"填空题34","type":"填空题","question":"填空题34、时间盲注判断条件真假的依据是___的长短。","answer":"响应时间","analysis":"时间盲注通过响应时间差异判断条件真假。","category":"SQL注入"},
+    {"id":"填空题35","type":"填空题","question":"填空题35、在堆叠注入中，多条SQL语句之间使用___符号分隔。","answer":"分号;","analysis":"堆叠注入使用分号分隔多条SQL语句。","category":"SQL注入"},
+    {"id":"填空题36","type":"填空题","question":"填空题36、sqlmap中转储（导出）数据的参数是___。","answer":"--dump","analysis":"--dump参数用于导出数据。","category":"SQL注入"},
+    {"id":"填空题37","type":"填空题","question":"填空题37、宽字节注入主要针对___编码的数据库。","answer":"GBK","analysis":"宽字节注入主要利用GBK编码的特性。","category":"SQL注入"},
+    {"id":"填空题38","type":"填空题","question":"填空题38、在报错注入中，updatexml()函数的第二个参数需要是___格式。","answer":"XPath","analysis":"updatexml()函数需要XPath格式的参数。","category":"SQL注入"},
+    {"id":"填空题39","type":"填空题","question":"填空题39、sqlmap中设置HTTP请求延迟时间（秒）的参数是___。","answer":"--delay","analysis":"--delay参数用于设置请求延迟。","category":"SQL注入"},
+    {"id":"填空题40","type":"填空题","question":"填空题40、SQL注入中，and 1=___会让查询条件永远为假，页面异常。","answer":"2","analysis":"and 1=2会让条件永远为假。","category":"SQL注入"},
+    {"id":"填空题41","type":"填空题","question":"填空题41、在MySQL中，information_schema.___表存储了所有数据库的表名。","answer":"tables","analysis":"information_schema.tables存储数据库表名信息。","category":"SQL注入"},
+    {"id":"简答题1","type":"简答题","question":"简答题1、简述SQL注入攻击的原理。","answer":"SQL注入攻击的原理是：攻击者通过在应用程序的输入点（如URL参数、表单字段、Cookie等）插入恶意的SQL代码片段，使这些代码被拼接到应用程序的SQL查询语句中，并被数据库服务器执行。由于应用程序没有对用户输入进行充分的验证和过滤，导致攻击者可以绕过身份验证、获取敏感数据、修改数据库内容甚至控制服务器。","analysis":"SQL注入的核心在于输入验证不足和SQL语句的字符串拼接。","category":"SQL注入"},
+    {"id":"简答题2","type":"简答题","question":"简答题2、简述数字型注入和字符型注入的区别。","answer":"数字型注入的参数是数字类型，SQL语句中该参数不带引号，注入时不需要闭合引号，直接在参数后添加SQL语句即可；字符型注入的参数是字符串类型，SQL语句中该参数带有引号，注入时需要先用单引号或双引号闭合原有的引号，再添加SQL语句，最后还需要注释掉后面多余的引号。判断方法：在参数后加单引号，如果报错则可能是字符型注入，如不报错则可能是数字型注入。","analysis":"数字型和字符型注入的主要区别在于参数类型和引号处理。","category":"SQL注入"},
+    {"id":"简答题3","type":"简答题","question":"简答题3、简述Union联合注入的基本步骤。","answer":"Union注入的基本步骤：①判断注入点，通过添加单引号或and 1=1/and 1=2判断是否存在注入；②判断列数，使用order by 1,2,3...逐步增加数字直到报错，报错前的数字即为列数；③判断显示位，使用union select 1,2,3...确定哪些列的数据会在页面显示；④获取数据库名，在显示位替换为database()等函数；⑤获取表名，查询information_schema.tables；⑥获取列名，查询information_schema.columns；⑦获取目标数据。","analysis":"Union联合注入需要按照步骤逐步进行。","category":"SQL注入"},
+    {"id":"简答题4","type":"简答题","question":"简答题4、简述布尔盲注的原理和常用函数。","answer":"布尔盲注的原理是：当页面不直接显示查询结果，但会根据查询条件的真假返回不同页面内容时，攻击者通过构造条件表达式，根据页面返回的差异来判断条件是否成立，从而逐字符获取数据。常用函数包括：length()获取字符串长度、substr()/mid()截取字符串、ascii()/ord()获取字符ASCII码值、left()从左侧截取字符串。通过不断二分猜测每个字符的ASCII码值，逐步还原完整数据。","analysis":"布尔盲注依赖于页面响应差异来判断条件真假。","category":"SQL注入"},
+    {"id":"简答题5","type":"简答题","question":"简答题5、简述时间盲注的原理。","answer":"时间盲注的原理是：当页面无论查询条件真假都返回相同内容时，攻击者通过在SQL语句中嵌入时间延迟函数（MySQL中为sleep()），根据页面响应时间来判断条件是否成立。如果条件为真则执行sleep()导致响应延迟，如果条件为假则立即响应。通过逐字符构造条件表达式，结合if(条件,sleep(N),0)格式，观察响应时间来逐步获取数据库中的数据。","analysis":"时间盲注通过响应时间差异来判断条件真假。","category":"SQL注入"},
+    {"id":"简答题6","type":"简答题","question":"简答题6、简述sqlmap工具的基本使用方法。","answer":"sqlmap基本使用方法：①检测注入点：sqlmap -u '目标URL'；②获取数据库列表：sqlmap -u 'URL' --dbs；③获取指定数据库的表：sqlmap -u 'URL' -D 数据库名 --tables；④获取指定表的列：sqlmap -u 'URL' -D 数据库名 -T 表名 --columns；⑤获取数据：sqlmap -u 'URL' -D 数据库名 -T 表名 -C 列名 --dump；⑥POST注入：sqlmap -u 'URL' --data '参数'；⑦Cookie注入：sqlmap -u 'URL' --cookie 'cookie值'。","analysis":"sqlmap是最常用的SQL注入自动化工具。","category":"SQL注入"},
+    {"id":"简答题7","type":"简答题","question":"简答题7、简述BurpSuite在SQL注入测试中的作用。","answer":"BurpSuite在SQL注入测试中的主要作用：①Proxy模块：拦截浏览器和服务器之间的HTTP/HTTPS请求，可修改请求参数进行注入测试；②Repeater模块：对拦截的请求进行重放和修改，手动测试各种注入payload，观察响应差异；③Intruder模块：自动化批量测试，对参数进行字典攻击，批量测试注入payload；④Scanner模块：自动扫描Web应用漏洞（Pro版）；⑤Decoder模块：对编码数据进行解码和编码转换，如URL解码等。","analysis":"BurpSuite是Web安全测试的必备工具。","category":"SQL注入"},
+    {"id":"简答题8","type":"简答题","question":"简答题8、简述WAF绕过的常见方法。","answer":"WAF绕过的常见方法：①大小写混合：将SQL关键字用不同大小写混合，如SeLeCt；②双写关键字：如selselectect，WAF过滤一次后剩余select；③编码绕过：使用URL编码、Unicode编码、十六进制编码等；④内联注释：MySQL中可以使用un/**/ion的方式分割关键字；⑤等价函数替换：用substr()替换mid()等；⑥空白符替换：使用%09、%0a等特殊空白字符替代普通空格；⑦参数污染：利用服务器对重复参数的不同处理方式。","analysis":"WAF绕过需要了解WAF的检测规则。","category":"数据库防火墙"},
+    {"id":"简答题9","type":"简答题","question":"简答题9、简述预编译语句防止SQL注入的原理。","answer":"预编译语句防止SQL注入的原理是将SQL查询的结构和数据分离。执行预编译语句时，首先数据库服务器对SQL语句进行编译，确定查询结构（如SELECT * FROM users WHERE id=?），此时查询结构已固定；然后再将参数绑定到占位符上，绑定的参数只被当作数据处理，不会被解释为SQL命令。因此，即使参数中包含SQL关键字或特殊字符，也不会改变查询结构，从根本上防止了SQL注入攻击。","analysis":"预编译语句是防止SQL注入的最佳实践。","category":"SQL注入"},
+    {"id":"简答题10","type":"简答题","question":"简答题10、简述二次注入的原理和防范方法。","answer":"二次注入的原理：攻击者首先将含有SQL恶意代码的数据存入数据库，第一次写入时经过转义处理不触发注入；当这些数据被读取并用于构造新SQL查询时，由于不再转义，恶意代码被当作SQL命令执行。防范方法：①对所有从数据库读取的数据也进行验证和过滤；②统一使用预编译语句；③对输出数据进行编码处理；④遵循最小权限原则限制数据库用户权限；⑤进行完整的代码安全审计。","analysis":"二次注入需要两次请求才能完成攻击。","category":"SQL注入"},
+    {"id":"简答题11","type":"简答题","question":"简答题11、简述宽字节注入的原理。","answer":"宽字节注入的原理是：当数据库使用GBK等多字节编码时，一个字符由两个字节组成。PHP的addslashes()函数会在单引号前添加反斜杠（0x5c）。如果攻击者在单引号前发送0xbf等字节，在GBK编码下0xbf5c会被解析为一个中文字符，从而'消耗'掉反斜杠，使单引号成功逃逸，从而实现注入。防范方法：使用UTF-8编码；使用mysql_real_escape_string()而非addslashes()；设置数据库连接字符集。","analysis":"宽字节注入利用了多字节编码的特性。","category":"SQL注入"},
+    {"id":"简答题12","type":"简答题","question":"简答题12、简述DNS外带注入的原理。","answer":"DNS外带注入的原理是：当目标服务器无直接回显时，利用数据库的特殊函数（如MySQL的load_file()，SQL Server的xp_dirtree()等）发起DNS查询，将要获取的数据作为DNS查询的子域名，发送到攻击者控制的DNS服务器。攻击者通过查看DNS服务器的查询日志获取被查询的数据。这种方式能绕过无回显限制，可以快速提取数据，比传统盲注效率高得多，但需要数据库用户具有足够权限且目标服务器能发出DNS请求。","analysis":"DNS外带注入是一种高效的数据提取技术。","category":"SQL注入"},
+    {"id":"简答题13","type":"简答题","question":"简答题13、简述sqli-labs靶场的结构和用途。","answer":"sqli-labs是专门用于学习SQL注入的靶场平台，包含65个不同难度的关卡，覆盖各种SQL注入类型：Less 1-22为GET/POST方式注入，Less 23-37为各种绕过方式，Less 38-53为堆叠查询，Less 54-65为挑战关卡。用途：①学习各种SQL注入技术的原理和实操；②练习sqlmap等工具的使用；③理解不同防御措施和绕过方法；④作为安全培训和教学平台。每关都有不同的注入技巧和知识点，难度循序渐进，适合从入门到进阶的学习。","analysis":"sqli-labs是学习SQL注入的最佳练习平台。","category":"SQL注入"},
+    {"id":"简答题14","type":"简答题","question":"简答题14、简述HTTP Header注入的常见位置和检测方法。","answer":"HTTP Header注入的常见位置：①User-Agent头：存储浏览器信息；②Cookie头：存储会话信息；③Referer头：记录来源页面；④X-Forwarded-For头：记录客户端IP；⑤Accept头：声明可接受的内容类型。检测方法：①使用BurpSuite拦截请求，在Header字段中添加单引号观察是否报错；②在Header值中添加and 1=1/and 1=2对比响应差异；③使用sqlmap的--level参数设为3及以上，自动检测Header注入；④使用sleep()函数测试是否有时间延迟。","analysis":"HTTP Header注入发生在请求头的各个字段中。","category":"SQL注入"},
+    {"id":"简答题15","type":"简答题","question":"简答题15、简述数据库安全的纵深防御体系应包含哪些层面。","answer":"数据库安全的纵深防御体系应包含：①网络层：使用防火墙限制数据库端口访问，部署WAF拦截SQL注入，使用VPN或专线访问数据库；②应用层：使用预编译语句，实施输入验证和过滤，采用参数化查询，使用ORM框架；③数据库层：最小权限原则分配用户权限，启用审计日志，使用透明数据加密，定期更新补丁；④操作系统层：限制操作系统权限，关闭不必要的服务，使用入侵检测系统；⑤管理层：制定安全策略，定期进行安全评估和渗透测试，开展安全培训，建立应急响应机制。","analysis":"数据库安全需要多层次的纵深防御体系。","category":"数据库防火墙"},
+    {"id":"简答题16","type":"简答题","question":"简答题16、简述Cookie注入的原理和步骤。","answer":"Cookie注入原理：当Web应用从Cookie中读取参数值并用于构造SQL查询，且未对Cookie值进行过滤时，攻击者可通过修改Cookie中的参数值来注入SQL代码。步骤：①正常访问页面，使用BurpSuite拦截请求获取Cookie内容；②分析Cookie参数，识别可能的注入点（如id=1等）；③在Cookie参数值中添加单引号，观察页面是否报错；④使用and 1=1和and 1=2判断注入类型；⑤构造注入payload（联合注入或盲注）获取数据；⑥也可使用sqlmap的--cookie参数进行自动化注入测试。","analysis":"Cookie注入是一种特殊的注入方式。","category":"SQL注入"},
+    {"id":"简答题17","type":"简答题","question":"简答题17、简述报错注入的原理及常用函数。","answer":"报错注入的原理是：当应用程序将数据库错误信息直接返回给页面时，攻击者通过构造特殊SQL语句，故意触发数据库错误，并在错误信息中包含所需查询的数据。常用函数：①extractvalue(1,concat(0x7e,SQL语句))：通过XPath路径格式错误将查询结果包含在报错信息中；②updatexml(1,concat(0x7e,SQL语句),1)：原理同上；③floor()+rand()：通过主键重复引起报错；④exp()：通过数值溢出引起报错。注意：单次extractvalue/updatexml报错最多返回32个字符的数据。","analysis":"报错注入利用数据库错误信息回显数据。","category":"SQL注入"},
+    {"id":"简答题18","type":"简答题","question":"简答题18、简述堆叠注入的原理及使用场景。","answer":"堆叠注入原理：通过在SQL语句中添加分号(;)来结束当前查询语句，然后紧跟新的SQL语句，使数据库执行多条SQL命令。使用场景：①修改数据：可以执行INSERT/UPDATE/DELETE操作；②创建数据库对象：可以创建表、视图、存储过程；③权限操作：可以创建数据库用户或授权；④执行系统命令（结合xp_cmdshell等）。限制：并非所有数据库都支持（Oracle不支持）；需要应用程序使用支持多语句执行的API；通常用于数字型或可闭合的字符型注入场景；WAF通常会拦截分号。","analysis":"堆叠注入可以执行多条SQL语句。","category":"SQL注入"},
+    {"id":"简答题19","type":"简答题","question":"简答题19、简述数据库备份策略在安全中的重要性。","answer":"数据库备份策略在安全中的重要性体现在：①数据恢复：当数据库遭受SQL注入攻击导致数据被篡改或删除时，备份是恢复数据的唯一可靠手段；②业务连续性：定期备份确保系统在遭受攻击后能快速恢复运行；③合规要求：许多安全法规要求对敏感数据进行定期备份；④审计追踪：备份数据可作为安全事件的取证材料；⑤灾难恢复：应对硬件故障，自然灾害等意外情况。备份策略应包括全量备份、增量备份、差异备份的组合，以及定期验证备份数据的可恢复性。","analysis":"数据库备份是安全防护的重要组成部分。","category":"备份恢复"},
+    {"id":"简答题20","type":"简答题","question":"简答题20、简述如何判断一个URL参数是否存在SQL注入漏洞。","answer":"判断URL参数是否存在SQL注入漏洞的方法：①基础测试：在参数后添加单引号'，如果页面报错或显示异常，可能存在注入；②逻辑测试：分别添加'and 1=1--和'and 1=2--，如果前者页面正常、后者页面异常，则存在注入；③时间测试：添加'and sleep(5)--，如果响应延迟5秒，存在时间盲注；④数值测试：对数字型参数，将1改为2-1，如果结果与1相同，可能存在注入；⑤工具测试：使用sqlmap -u 'URL'自动检测。发现后应立即停止测试，在授权范围内记录漏洞信息。","analysis":"SQL注入检测需要综合多种方法。","category":"SQL注入"}
+];
+
+/**
+ * 知识库对象
+ * 按知识点分类，每个分类包含基础概念(basic)和知识延伸(extend)两个数组
+ */
+window.knowledgeBase = {
+    "SQL注入": {
+        basic: [
+            "SQL注入是一种代码注入技术，攻击者通过在应用程序的输入点插入恶意SQL代码来攻击数据库",
+            "SQL注入的本质是把用户输入的输入作为SQL命令的一部分执行",
+            "SQL注入可以导致数据泄露、数据篡改、服务器被控制等严重后果"
+        ],
+        extend: [
+            "现代Web应用框架（如使用ORM框架）可以有效防止大多数SQL注入",
+            "SQL注入按注入类型可分为：数字型、字符型、搜索型、盲注等",
+            "OWASP Top 10一直将SQL注入列为最危险的Web漏洞之一"
+        ]
+    },
+    "联合注入": {
+        basic: [
+            "联合注入使用UNION关键字合并两个或多个SELECT语句的结果",
+            "联合注入要求前后两个SELECT语句必须有相同的列数和兼容的数据类型",
+            "联合注入步骤：判断列数、确定显示位、获取数据库名、获取表名、获取列名、获取数据"
+        ],
+        extend: [
+            "UNION ALL可以获取额外的查询结果，UNION DISTINCT（默认）会去重",
+            "联合注入适合页面有数据回显时使用",
+            "可以使用NULL填充列保持列数判断"
+        ]
+    },
+    "盲注": {
+        basic: [
+            "盲注分为布尔盲注和时间盲注，当页面不直接显示查询结果时使用",
+            "布尔盲注根据页面响应的真假来判断条件是否成立",
+            "时间盲注通过观察页面响应时间判断条件是否成立"
+        ],
+        extend: [
+            "盲注通常通过二分查找法提高效率",
+            "布尔盲注常用函数：length()、substr()、ascii()、ord()",
+            "时间盲注常用函数：sleep()、benchmark()"
+        ]
+    },
+    "报错注入": {
+        basic: [
+            "报错注入通过故意触发数据库错误，使错误信息包含所需数据",
+            "extractvalue()和updatexml()是常用的报错注入函数",
+            "报错注入需要应用程序返回数据库错误信息"
+        ],
+        extend: [
+            "extractvalue()和updatexml()通过XPath路径格式错误触发",
+            "floor()+rand()通过主键冲突触发报错",
+            "exp()通过数值溢出触发报错",
+            "报错注入单次最多只能返回32个字符"
+        ]
+    },
+    "sqlmap": {
+        basic: [
+            "sqlmap是一个开源的SQL注入检测和利用工具",
+            "常用参数：-u指定URL，--dbs获取所有数据库，--tables获取所有表，--dump导出数据",
+            "sqlmap支持多种数据库（MySQL、MSSQL、Oracle等）"
+        ],
+        extend: [
+            "--level设置检测级别，越高越全面但越慢",
+            "--risk设置风险级别",
+            "--technique指定注入技术",
+            "sqlmap可以自动识别注入类型"
+        ]
+    },
+    "BurpSuite": {
+        basic: [
+            "BurpSuite是Web应用安全测试工具",
+            "Proxy模块拦截和修改HTTP请求",
+            "Repeater模块重放和修改HTTP请求",
+            "Intruder模块自动化暴力破解和模糊测试"
+        ],
+        extend: [
+            "Community版Scanner功能有限，Pro版功能完整",
+            "Decoder模块进行编码和解码",
+            "Comparer模块比较两个请求或响应",
+            "需要安装CA证书才能拦截HTTPS"
+        ]
+    },
+    "数据库防火墙": {
+        basic: [
+            "WAF全称是Web应用防火墙",
+            "WAF可以检测和拦截SQL注入攻击",
+            "WAF绕过方法包括大小写混合、双写关键字、编码绕过、内联注释等"
+        ],
+        extend: [
+            "WAF按部署方式：网络层、应用层、云WAF",
+            "现代WAF使用机器学习检测异常",
+            "WAF不能替代代码级防御"
+        ]
+    }
+};
+
+// data.js 加载完成
