@@ -416,14 +416,24 @@ body::before {
     border-radius: 30px;
     cursor: pointer;
     font-size: 14px;
-    background: rgba(var(--color-warning-rgb), 0.1);
-    color: var(--color-warning);
-    border: 2px solid var(--border-warning);
+    background: rgba(245, 158, 11, 0.15);
+    color: #B45309;
+    border: 2px solid rgba(245, 158, 11, 0.4);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.mark-btn:hover {
+    background: rgba(245, 158, 11, 0.25);
+    border-color: rgba(245, 158, 11, 0.7);
+    transform: translateY(-1px);
 }
 
 .mark-btn.marked {
-    background: rgba(var(--color-warning-rgb), 0.2);
-    border-color: var(--color-warning);
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    border-color: #D97706;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
 }
 
 .jump-panel {
@@ -464,19 +474,39 @@ body::before {
     background: rgba(var(--color-primary-rgb), 0.1);
 }
 
-.jump-btn.current {
-    background: var(--color-primary);
-    color: var(--text-inverse);
+.jump-btn.correct {
+    background: rgba(16, 185, 129, 0.18);
+    border-color: #10B981;
+    color: #065F46;
+    font-weight: 600;
 }
 
-.jump-btn.answered {
-    background: rgba(var(--color-success-rgb), 0.2);
-    border-color: var(--border-success);
+.jump-btn.wrong {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: #EF4444;
+    color: #991B1B;
+    font-weight: 600;
 }
 
 .jump-btn.marked {
-    border-color: var(--color-warning);
-    background: rgba(var(--color-warning-rgb), 0.2);
+    border-color: #F59E0B;
+    background: rgba(245, 158, 11, 0.22);
+    color: #92400E;
+    font-weight: 600;
+}
+
+/* 当前题目标记：最高优先级，使用醒目的蓝色 */
+.jump-btn.current {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%) !important;
+    color: #ffffff !important;
+    border-color: #4F46E5 !important;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+    font-weight: 700;
+}
+
+/* 同时被标记且是当前题目：保持蓝色但添加黄色指示 */
+.jump-btn.current.marked {
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.5), 0 4px 12px rgba(79, 70, 229, 0.35);
 }
 
 .analysis {
@@ -505,7 +535,7 @@ body::before {
     border: 2px solid var(--border-primary);
     border-radius: 15px;
     overflow: hidden;
-    display: none;
+    display: block;
 }
 
 .knowledge-header {
@@ -523,6 +553,51 @@ body::before {
     padding: 20px;
     background: var(--bg-card-solid);
     transition: background 0.3s ease;
+}
+
+.knowledge-block {
+    margin-bottom: 20px;
+    padding: 18px;
+    background: rgba(var(--color-primary-rgb), 0.03);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+}
+
+.knowledge-block:last-child {
+    margin-bottom: 0;
+}
+
+.knowledge-block-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--border-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.knowledge-block-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.knowledge-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.7;
+    color: var(--text-main);
+    font-size: 14px;
+}
+
+.knowledge-bullet {
+    flex-shrink: 0;
+    font-size: 16px;
+    margin-top: 1px;
 }
 
 .knowledge-title {
@@ -827,6 +902,30 @@ body::before {
 
 #consent-modal .btn {
     min-width: 120px;
+}
+
+/* 填空题输入框样式 */
+.fillblank-input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    background: var(--bg-input);
+    color: var(--text-main);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    outline: none;
+    font-family: inherit;
+}
+
+.fillblank-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+.fillblank-input:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
 }
 
 /* Consent Modal 内部元素样式 */
