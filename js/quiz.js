@@ -5,6 +5,22 @@
 let questions = window.questions || [];
 const quizMeta = window.quizMeta || {};
 
+// ==================== 考试模式配置 ====================
+const EXAM_CONFIG = {
+    // 各题型题目数量配置
+    questionCount: {
+        '单选题': 20,
+        '多选题': 10,
+        '判断题': 10,
+        '填空题': 10,
+        '简答题': 5
+    },
+    // 考试总时长（分钟）
+    totalTime: 60,
+    // 及格分数
+    passScore: 60
+};
+
 // ==================== 数据格式适配 ====================
 // 将线上格式（answer字段）转换为本地格式（correct字段）
 function adaptQuestionData(rawQuestions) {
@@ -58,6 +74,11 @@ function hasKnowledgeContent(q) {
 }
 
 questions = adaptQuestionData(questions);
+
+// 保存原始题库，确保每次进入考试模式都能从完整题库中随机抽取
+if (!window.originalQuestions) {
+    window.originalQuestions = [...questions];
+}
 
 // ==================== 状态变量 ====================
 let currentMode = 'practice';
@@ -130,9 +151,15 @@ function startQuiz(mode) {
     }
     currentMode = mode;
     currentQuestionIndex = 0;
-    userAnswers = new Array(questions.length).fill(null);
     markedQuestions.clear();
     currentQuestionAnswered = false;
+
+    // 考试模式：随机抽取题目
+    if (mode === 'exam') {
+        questions = generateExamQuestions();
+    }
+
+    userAnswers = new Array(questions.length).fill(null);
     startTime = Date.now();
 
     document.getElementById('home-page').style.display = 'none';
@@ -145,15 +172,94 @@ function startQuiz(mode) {
     renderJumpPanel();
 }
 
+// ==================== 考试题目生成 ====================
+function generateExamQuestions() {
+    // 确保从完整的原始题库中抽取题目
+    const rawQuestions = window.originalQuestions || questions;
+    
+    if (!rawQuestions || rawQuestions.length === 0) {
+        console.error('原始题库为空');
+        return [];
+    }
+
+    const examQuestions = [];
+    const typeOrder = ['单选题', '多选题', '判断题', '填空题', '简答题'];
+
+    // 按题型随机抽取题目
+    typeOrder.forEach(type => {
+        const count = EXAM_CONFIG.questionCount[type] || 0;
+        const typeQuestions = rawQuestions.filter(q => q.type === type);
+        
+        if (typeQuestions.length === 0) {
+            console.warn(`题库中没有${type}类型的题目`);
+            return;
+        }
+
+        // 每次考试都重新随机打乱并抽取
+        const shuffled = shuffleArray([...typeQuestions]);
+        const selected = shuffled.slice(0, Math.min(count, shuffled.length));
+        
+        examQuestions.push(...selected);
+    });
+
+    // 最后再打乱所有题目的顺序
+    return shuffleArray(examQuestions);
+}
+
+// 数组随机打乱
+function shuffleArray(array) {
+    const result = [...array];
+    for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
+}
+
 function startTimer() {
     clearInterval(timerInterval);
     const timerEl = document.getElementById('timer');
-    timerInterval = setInterval(() => {
-        const elapsed = Math.floor((Date.now() - startTime) / 1000);
-        const mins = String(Math.floor(elapsed / 60)).padStart(2, '0');
-        const secs = String(elapsed % 60).padStart(2, '0');
-        timerEl.textContent = `⏱️ ${mins}:${secs}`;
-    }, 1000);
+    
+    if (currentMode === 'exam') {
+        // 考试模式：倒计时
+        let remaining = EXAM_CONFIG.totalTime * 60;
+        updateExamTimer(timerEl, remaining);
+        
+        timerInterval = setInterval(() => {
+            remaining--;
+            updateExamTimer(timerEl, remaining);
+            
+            if (remaining <= 0) {
+                clearInterval(timerInterval);
+                alert('考试时间到！系统将自动提交试卷。');
+                finishQuiz();
+            }
+        }, 1000);
+    } else {
+        // 练习模式：正计时
+        timerInterval = setInterval(() => {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const mins = String(Math.floor(elapsed / 60)).padStart(2, '0');
+            const secs = String(elapsed % 60).padStart(2, '0');
+            timerEl.textContent = `⏱️ ${mins}:${secs}`;
+        }, 1000);
+    }
+}
+
+function updateExamTimer(el, remaining) {
+    const mins = String(Math.floor(remaining / 60)).padStart(2, '0');
+    const secs = String(remaining % 60).padStart(2, '0');
+    
+    // 剩余时间少于10分钟时显示警告颜色
+    if (remaining <= 600) {
+        el.style.color = remaining <= 300 ? '#EF4444' : '#F59E0B';
+        el.style.fontWeight = 'bold';
+    } else {
+        el.style.color = '';
+        el.style.fontWeight = '';
+    }
+    
+    el.textContent = `⏱️ ${mins}:${secs}`;
 }
 
 function stopTimer() {
@@ -180,7 +286,7 @@ function renderQuestion() {
             const div = document.createElement('div');
             div.className = 'option';
             div.dataset.index = idx;
-            const text = q.type === '判断题' ? opt.substring(3) : opt.substring(3);
+            const text = opt.replace(/^[A-Z]\.\s*/, '');
             div.innerHTML = `<span class="option-letter">${String.fromCharCode(65 + idx)}</span><span class="option-text">${text}</span>`;
             div.onclick = () => selectOption(idx);
             contentDiv.appendChild(div);
@@ -190,7 +296,8 @@ function renderQuestion() {
             const div = document.createElement('div');
             div.className = 'option';
             div.dataset.index = idx;
-            div.innerHTML = `<span class="option-letter">${String.fromCharCode(65 + idx)}</span><span class="option-text">${opt.substring(3)}</span>`;
+            const text = opt.replace(/^[A-Z]\.\s*/, '');
+            div.innerHTML = `<span class="option-letter">${String.fromCharCode(65 + idx)}</span><span class="option-text">${text}</span>`;
             div.onclick = () => toggleMultiOption(idx);
             contentDiv.appendChild(div);
         });
@@ -776,8 +883,18 @@ function finishQuiz() {
     document.getElementById('quiz-page').style.display = 'none';
     document.getElementById('result-page').style.display = 'block';
 
+    // 根据模式设置结果标签
+    let labelText;
+    if (currentMode === 'exam') {
+        // 考试模式：及格/不及格
+        labelText = accuracy >= EXAM_CONFIG.passScore ? '🎉 及格' : '😢 不及格';
+    } else {
+        // 练习模式：优秀/良好/及格/需改进
+        labelText = accuracy >= 90 ? '优秀' : accuracy >= 70 ? '良好' : accuracy >= 60 ? '及格' : '需改进';
+    }
+
     document.getElementById('result-score').textContent = accuracy;
-    document.getElementById('result-label').textContent = accuracy >= 90 ? '优秀' : accuracy >= 70 ? '良好' : accuracy >= 60 ? '及格' : '需改进';
+    document.getElementById('result-label').textContent = labelText;
     document.getElementById('stat-answered').textContent = userAnswers.filter(a => a !== null).length;
     document.getElementById('stat-correct').textContent = correct;
     document.getElementById('stat-accuracy').textContent = accuracy + '%';
@@ -825,6 +942,12 @@ function confirmExit() {
 function goHome() {
     stopTimer();
     cancelAutoAdvance();
+    
+    // 重置题库为原始题库（考试模式会抽取部分题目，返回首页时需要恢复）
+    if (window.originalQuestions) {
+        questions = [...window.originalQuestions];
+    }
+    
     document.getElementById('quiz-page').style.display = 'none';
     document.getElementById('result-page').style.display = 'none';
     document.getElementById('wrongbook-page').style.display = 'none';
